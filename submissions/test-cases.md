@@ -6,8 +6,8 @@
 
 | Thông tin | |
 |---|---|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Ngày tạo** | `<!-- DD/MM/YYYY -->` |
+| **Nhóm** | `Nhóm 17` |
+| **Ngày tạo** | `17/05/2026` |
 | **Hệ thống** | https://stqa.rbc.vn |
 | **Tham chiếu** | SRS v1.0 |
 
@@ -58,19 +58,38 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-|  | | | |
+| Vai trò người dùng ? | Thủ thư | `librarian@library.com` | Thấy nút "Kiểm tra sách quá hạn", có thể ấn |
+| | Thành viên | `ba.nguyen@gmail.com` | Không thấy nút "Kiểm tra sách quá hạn" |
+| Trạng thái phiếu mượn | Đang mượn, dueDate <= hôm nay | BR001 (hạn 15/09/2024)| Đánh dấu quá hạn sau khi nhấn nút |
+| | Đang mượn, dueDate > hôm nay | Phiếu mới tạo hôm nay  | Giữ nguyên trạng thái đang mượn |
+| | Đã trả, dueDate <= hôm nay | BR005, BR004 | Giữ nguyên trạng thái đã  |
+| Phạm vi hiển thị cho thành viên | Phiếu của chính mình | BR001 (MEM002) | Thấy phiếu quá hạn của mình |
+| | Phiếu của người khác  | BR003 (MEM006) | Không thấy phiếu của người khác | 
 
 ### IDM — Quản lý thành viên (REQ-7)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| `<!-- Nhóm tự điền -->` | | | |
-
+| Vai trò người dùng | Thủ thư | `librarian@library.` | Thấy nút "Thêm thành viên", có thể ấn |
+| | Thành viên | `ba.nguyen@gmail.com` | Không thấy nút "Thêm thành viên" | 
+| Họ và tên | Có nhập chữ | Name Test | Thêm thành công |
+| | Để trống | `để trống` | Báo lỗi `Họ tên không được để trống` |
+| Email | Nhập đúng cú pháp | `Emailtest@email.com` | Thêm thành công |
+| | Để trống | `để trống` | Báo lỗi `Email không hợp lệ` |
+| | Thiếu ký hiệu `@` | `Emailtestemail.com` | Báo lỗi `Email không hợp lệ` |
+| | Thiếu ký hiệu `.` ở domain| `Emailtest@emailcom` | Báo lỗi `Email không hợp lệ` | 
+| | Trùng email đã tồn tại | `ba.nguyen@gmail.com` | Báo lỗi `Email không hợp lệ` |
 ### IDM — Tra cứu phiếu mượn (REQ-8)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| `<!-- Nhóm tự điền -->` | | | |
+| Vai trò thành viên | Thủ thư | `librarian@library.com` | Xem được phiếu mượn của tất cả thành viên  |
+| | Thành viên | `ba.nguyen@gmail.com` | Chỉ thấy phiếu mượn của chính mình |
+| Tra cứu phiếu mượn | Mã thành viên của chính mình | `MEM002` | Hiển thị các phiếu mượn của chính mình | 
+| | Mã thành viên của thành viên khác | `MEM003` | Không hiển thị phiếu mượn của thành viên  | 
+| | Mã thành viên không hợp lệ| `MEM99` | Không hiển thị phiếu mượn |
+| Thông tin phiếu mượn | Hiển thị đầy đủ thông tin | `BR001` | Hiển thị mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái |
+
 
 > 💡 **Gợi ý kỹ thuật**: Sử dụng **Phân lớp tương đương (EP)** cho các phân vùng rời rạc, **Phân tích giá trị biên (BVA)** cho các phân vùng số (ví dụ: giới hạn 3 sách). Xem textbook §6.1–6.3.
 
@@ -83,7 +102,7 @@
 
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| | | | | | | | |
+| TC-01 | Kiểm tra thành viên có thể đăng nhập với email và mật khẩu hợp lệ | Thành viên đã có tài khoản trong hệ thống và đang ở trang đăng nhập | 1.Điền email hợp lệ vào ô `Email`. 2.Sử dụng mật khẩu đúng vào ô `Mật khẩu`. 3.Ấn nút đăng nhập  | Email đăng nhập: `ba.nguyen@email.com`, mật khẩu: `password123` | Đăng nhập thành công, hiển thị trang  | REQ -1  | Black Box Testing |
 
 ---
 
