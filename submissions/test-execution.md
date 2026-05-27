@@ -5,10 +5,10 @@
 
 | Thông tin | |
 |---|---|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Ngày thực thi** | `<!-- DD/MM/YYYY -->` |
-| **Trình duyệt** | Chrome `<!-- version -->` |
-| **Hệ điều hành** | `<!-- Windows / macOS / Linux -->` |
+| **Nhóm** | `Nhóm 17` |
+| **Ngày thực thi** | `16/05/2026` |
+| **Trình duyệt** | Firefox `139.0` |
+| **Hệ điều hành** | `Linux` |
 
 ---
 
