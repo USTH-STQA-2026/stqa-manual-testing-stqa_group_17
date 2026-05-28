@@ -102,7 +102,10 @@
 
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-01 | Kiểm tra thành viên có thể đăng nhập với email và mật khẩu hợp lệ | Thành viên đã có tài khoản trong hệ thống và đang ở trang đăng nhập | 1.Điền email hợp lệ vào ô `Email`. 2.Sử dụng mật khẩu đúng vào ô `Mật khẩu`. 3.Ấn nút đăng nhập  | Email đăng nhập: `ba.nguyen@email.com`, mật khẩu: `password123` | Đăng nhập thành công, hiển thị trang  | REQ -1  | Black Box Testing |
+| TC-01 | Kiểm tra thành viên có thể đăng nhập với email và mật khẩu hợp lệ | Thành viên đã có tài khoản trong hệ thống và đang ở trang đăng nhập | 1.Điền email hợp lệ vào ô `Email`. 2.Sử dụng mật khẩu đúng vào ô `Mật khẩu`. 3.Ấn nút Đăng nhập  | Email đăng nhập: `librarian@library.com` , mật khẩu: `admin123` | Đăng nhập thành công, hiển thị trang  | REQ-01  | EP, BVA |
+| TC-02 | Kiểm tra thành viên đăng nhập thất bại do sai mật khẩu | Hệ thống ở trang đăng nhập | 1. Điền email hợp lệ vào ô `Email`. 2.Nhập sai mật khẩu vào ô `Mật khẩu`. 3.Nhấn Đăng nhập | Email: `librarian@library.com` , Pass: `wrongpass` | Thông báo lỗi sai thông tin đăng nhập. | REQ-01 | EP |
+| TC-03 | Kiểm tra thành viên đăng nhập thất bại do email không tồn tại | Hệ thống ở trang đăng nhập | 1.Điền email không có trong database. 2.Nhập đúng mật khẩu vào ô `Mật khẩu`. 3.Nhấn Đăng nhập | Email: `noone@email.com` , Pass: `admin123` | Thông báo lỗi không tìm thấy tài khoản. | REQ-01 | EP |
+| TC-04 | Kiểm tra thành viên đăng nhập thất bại khi để trống Email | Hệ thống ở trang đăng nhập | 1.Bỏ trống ô email. 2.Nhập mật khẩu. 3.Nhấn Đăng nhập | Email: `""` , Pass: `admin123` | Hiển thị cảnh báo "Vui lòng nhập email". | REQ-01 | EP, BVA |
 
 ---
 
