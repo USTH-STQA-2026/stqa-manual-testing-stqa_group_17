@@ -70,7 +70,7 @@
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
-| Vai trò người dùng | Thủ thư | `librarian@library.` | Thấy nút "Thêm thành viên", có thể ấn |
+| Vai trò người dùng | Thủ thư | `librarian@library.com` | Thấy nút "Thêm thành viên", có thể ấn |
 | | Thành viên | `ba.nguyen@gmail.com` | Không thấy nút "Thêm thành viên" | 
 | Họ và tên | Có nhập chữ | Name Test | Thêm thành công |
 | | Để trống | `để trống` | Báo lỗi `Họ tên không được để trống` |
