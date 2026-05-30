@@ -88,7 +88,7 @@
 | Tra cứu phiếu mượn | Mã thành viên của chính mình | `MEM002` | Hiển thị các phiếu mượn của chính mình | 
 | | Mã thành viên của thành viên khác | `MEM003` | Không hiển thị phiếu mượn của thành viên  | 
 | | Mã thành viên không hợp lệ| `MEM99` | Không hiển thị phiếu mượn |
-| Thông tin phiếu mượn | Hiển thị đầy đủ thông tin | `BR001` | Hiển thị mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái |
+| Thông tin phiếu mượn | Hiển thị đầy đủ thông tin | `MEM002` | Hiển thị mã phiếu, sách mượn, ngày mượn, ngày hết hạn, trạng thái |
 
 
 > 💡 **Gợi ý kỹ thuật**: Sử dụng **Phân lớp tương đương (EP)** cho các phân vùng rời rạc, **Phân tích giá trị biên (BVA)** cho các phân vùng số (ví dụ: giới hạn 3 sách). Xem textbook §6.1–6.3.
