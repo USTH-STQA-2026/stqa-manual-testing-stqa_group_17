@@ -124,9 +124,9 @@
 | TC-09 | Tìm sách thành công bằng tên tác giả | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập tên tác giả. 3.Nhấn Tìm kiếm | Từ khóa: `"Nguyễn"` | Hiển thị danh sách sách của tác giả có tên "Nguyễn". | REQ-03 | EP |
 | TC-10 | Tìm sách không tồn tại | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập chuỗi ngẫu nhiên. 3.Nhấn Tìm kiếm | Từ khóa: `"XYZ123"` | Hiển thị danh sách rỗng. | REQ-03 | EP |
 | TC-11 | Tìm tên sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"FLUTTER"` | Kết quả hiển thị giống như khi tìm `"Flutter"`. | REQ-03 | EP |
-| TC-12 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"Kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | EP |
-| TC-13 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | EP |
-| TC-14 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"KINH TẾ"` | Hiển thị các sách thuộc thể loại kinh tế | EP |
+| TC-12 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"Kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
+| TC-13 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
+| TC-14 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"KINH TẾ"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
 | TC-15 | Mượn sách thành công (Điều kiện lý tưởng) | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Chọn sách có trạng thái "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 0 | Hệ thống cho phép mượn, tạo phiếu mượn thành công. | REQ-04, 05 | EP, BVA |  
 | TC-16 | Chặn mượn sách đang được người khác mượn | Đăng nhập tài khoản Thành viên Hoạt động | 1.Tìm sách đang có trạng thái "Đang mượn". 2.Nhấn Mượn sách | Sách: `BOOK003` | Nút mượn bị mờ hoặc hệ thống báo lỗi không cho phép. | REQ-04, 05 | EP |
 | TC-17 | Chặn mượn sách khi tài khoản bị Tạm ngưng | Đăng nhập tài khoản Tạm ngưng (`cu.le@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Tạm ngưng | Từ chối mượn, thông báo lỗi tài khoản đang bị tạm ngưng. | REQ-04, 05 | EP |
@@ -140,7 +140,7 @@
 | TC-25 | Phân quyền hiển thị nút Thêm thành viên | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang Quản lý thành viên | - | Nhìn thấy nút/chức năng "Thêm thành viên". | REQ-07 | EP |
 | TC-26 | Thêm thành viên thất bại do bỏ trống Họ tên | Thủ thư ở trang Thêm TV | 1.Bỏ trống Họ tên. 2.Nhập Email hợp lệ. 3.Nhập số điện thoại hợp lệ 4.Nhấn Lưu | Họ tên: `""` Email: `test@email.com` SĐT: `"0123456789"` | Báo lỗi "Họ tên không được để trống". | REQ-07 | EP, BVA |
 | TC-27 | Thêm thành viên thất bại do sai định dạng Email (thiếu @) | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email thiếu "@". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtestemail.com` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ. | REQ-07 | EP |
-| TC-28 | Thêm thành viên thất bại do sai định dạng Email (thiếu ".")  | Thủ thư ở trang thêm thành viên | 1.Nhập Họ tên. 2.Nhập Email thiếu ".". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtest@emailcom` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ |
+| TC-28 | Thêm thành viên thất bại do sai định dạng Email (thiếu ".")  | Thủ thư ở trang thêm thành viên | 1.Nhập Họ tên. 2.Nhập Email thiếu ".". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtest@emailcom` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ | REQ-07 | EP
 | TC-29 | Thêm thành viên thất bại do trùng Email đã có | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email của TV đang có. 3.Lưu | Họ tên: `Tester` Email: `ba.nguyen@email.com` SĐT:0123456789 | Báo lỗi email đã tồn tại trong hệ thống. | REQ-07 | EP |
 | TC-30 | Tra cứu toàn bộ phiếu mượn (Dành cho Thủ thư) | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang Tra cứu phiếu mượn | - | Xem được danh sách phiếu mượn của tất cả các thành viên. | REQ-08 | EP |
 | TC-31 | Thành viên chỉ tra cứu được phiếu của mình | Đăng nhập tài khoản Thành viên `MEM002` | 1.Truy cập trang Tra cứu phiếu mượn | - | Chỉ hiển thị các phiếu mượn thuộc về `MEM002`. | REQ-08 | EP |
@@ -154,4 +154,4 @@
 | Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
 |----------------|-------|---------|----------------------|
 | | | | |
-| Tổng | 26 | 8 | EP, BVA |
+| Tổng | 33 | 8 | EP, BVA |
