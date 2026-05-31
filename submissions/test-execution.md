@@ -41,14 +41,15 @@
 | TC-23 | Overdue Handling | Phiếu mới giữ trạng thái "Đang mượn" | Phiếu mới giữ trạng thái "Đang mượn" | Pass | | |
 | TC-24| Overdue Handling | Nhìn thấy phiếu mượn có trạng thái "quá hạn" | Nhìn thấy phiếu mượn có trạng thái "quá hạn" | Pass | | |
 | TC-25 | Member Management | Nhìn thấy nút "thêm thành viên" | Nhìn thấy nút "thêm thành viên" | Pass | | |
-| TC-26 | Member Management | Báo lỗi họ tên không được để trống | Báo lỗi họ tên không được để trống | Pass | | |
-| TC-27 | Member Management | Báo lỗi email không hợp lệ | Báo lỗi email không hợp lệ | Pass | | |
-| TC-28 | Member Management | Báo lỗi email không hợp lệ | Thêm thành viên thành công | Fail | | |
-| TC-28 | Member Management | Báo lỗi email đã tồn tại trong hệ thống | Báo lỗi email không hợp lệ | Fail | | |
-| TC-29 | Ticket Lookup | Xem được phiếu mượn của tất cả thành  | Xem được phiếu mượn của tất cả thành viên | Pass | | |
-| TC-30 | Ticket Lookup | Chỉ hiển thị phiếu mượn của chính mình | Chỉ hiển thị phiếu mượn của chính mình | Pass | | |
-| TC-31 | Ticket Lookup | Chặn hiển thị dữ liệu | Hiển thị dữ liệu của thành viên `MEM003` | Fail | | |
-| TC-32 | Ticket Lookup | Hiển thị thông tin phiếu | Hiển thị thông tin phiếu | Blocked | | |
+| TC-26 | Member Management | Thêm thành viên thành công | Hệ thống báo email không hợp lệ | Fail | | |
+| TC-27 | Member Management | Báo lỗi họ tên không được để trống | Báo lỗi họ tên không được để trống | Pass | | |
+| TC-28 | Member Management | Báo lỗi email không hợp lệ | Báo lỗi email không hợp lệ | Pass | | |
+| TC-29 | Member Management | Báo lỗi email không hợp lệ | Thêm thành viên thành công | Fail | | |
+| TC-30 | Member Management | Báo lỗi email đã tồn tại trong hệ thống | Báo lỗi email không hợp lệ | Fail | | |
+| TC-31 | Ticket Lookup | Xem được phiếu mượn của tất cả thành  | Xem được phiếu mượn của tất cả thành viên | Pass | | |
+| TC-32 | Ticket Lookup | Chỉ hiển thị phiếu mượn của chính mình | Chỉ hiển thị phiếu mượn của chính mình | Pass | | |
+| TC-33 | Ticket Lookup | Chặn hiển thị dữ liệu | Hiển thị dữ liệu của thành viên `MEM003` | Fail | | |
+| TC-34 | Ticket Lookup | Hiển thị thông tin phiếu | Hiển thị thông tin phiếu | Blocked | | |
 
 ---
 
@@ -56,12 +57,12 @@
 
 | Chỉ số | Giá trị |
 |--------|---------|
-| Tổng số test case | `33` |
+| Tổng số test case | `34` |
 | Pass | `26` |
-| Fail | `6` |
+| Fail | `7` |
 | Blocked | `1` |
 | Not Run | `0` |
-| **Tỷ lệ Pass** | `78%` |
+| **Tỷ lệ Pass** | `76%` |
 
 ### Kết quả theo nhóm chức năng
 
