@@ -49,7 +49,7 @@
 | TC-31 | Ticket Lookup | Xem được phiếu mượn của tất cả thành  | Xem được phiếu mượn của tất cả thành viên | Pass | | |
 | TC-32 | Ticket Lookup | Chỉ hiển thị phiếu mượn của chính mình | Chỉ hiển thị phiếu mượn của chính mình | Pass | | |
 | TC-33 | Ticket Lookup | Chặn hiển thị dữ liệu | Hiển thị dữ liệu của thành viên `MEM003` | Fail | | |
-| TC-34 | Ticket Lookup | Hiển thị thông tin phiếu | Hiển thị thông tin phiếu | Blocked | | |
+| TC-34 | Ticket Lookup | Hiển thị thông tin phiếu | Hiển thị thông tin phiếu | Pass | | |
 
 ---
 
@@ -58,11 +58,11 @@
 | Chỉ số | Giá trị |
 |--------|---------|
 | Tổng số test case | `34` |
-| Pass | `26` |
+| Pass | `27` |
 | Fail | `7` |
-| Blocked | `1` |
+| Blocked | `0` |
 | Not Run | `0` |
-| **Tỷ lệ Pass** | `76%` |
+| **Tỷ lệ Pass** | `79%` |
 
 ### Kết quả theo nhóm chức năng
 
