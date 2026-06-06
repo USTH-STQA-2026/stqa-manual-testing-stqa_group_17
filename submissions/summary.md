@@ -131,4 +131,4 @@ Các chức năng hoạt động tốt gồm: Đăng nhập, Hiển thị danh s
 
 | Công cụ AI | Dùng cho phần nào | Bạn đã kiểm tra/chỉnh sửa thế nào |
 |------------|-------------------|-----------------------------------|
-| Antigravity (Google DeepMind) | Hỗ trợ tổng hợp báo cáo summary dựa trên dữ liệu thực tế đã có | Toàn bộ số liệu (TC, Pass/Fail, Bug) lấy từ kết quả thực thi thực tế của nhóm. Nhóm kiểm tra lại từng mục trước khi nộp |
+| Gemini | Hỗ trợ tổng hợp báo cáo summary dựa trên dữ liệu thực tế đã có | Toàn bộ số liệu (TC, Pass/Fail, Bug) lấy từ kết quả thực thi thực tế của nhóm. Hỗ trợ kiểm tra lại từng mục trước khi nộp |
