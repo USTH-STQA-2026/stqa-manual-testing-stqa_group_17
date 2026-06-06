@@ -9,9 +9,14 @@
 | **Nhóm** | `Nhóm 17` |
 | **Ngày báo cáo** | `16/05/2026` |
 
+**Environment:**
+- Trình duyệt: Firefox `139`
+- Hệ điều hành: `Windows 11`
+- Ngôn ngữ giao diện: Tiếng Việt
+
 ---
 
-## BUG-01
+## BUG-01 - The category feature is case sensitive and does not return results when lower-case texts are entered
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -22,15 +27,6 @@
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
-
-**Title**
-`The category feature is case sensitive and does not return results when lower-case texts are entered`
-
-
-**Environment:**
-- Trình duyệt: Firefox `139`
-- Hệ điều hành: `Windows 11`
-- Ngôn ngữ giao diện: Tiếng Việt
 
 **Prerequisites:**
 `Logged into the system as an active member, in the "Books" page`
@@ -58,7 +54,7 @@
 
 ---
 
-## BUG-02
+## BUG-02 - The category feature is case sensitive and does not return results when upper-case texts are entered
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -69,15 +65,6 @@
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
-
-**Title**
-`The category feature is case sensitive and does not return results when upper-case texts are entered`
-
-
-**Environment:**
-- Trình duyệt: Firefox `139`
-- Hệ điều hành: `Windows 11`
-- Ngôn ngữ giao diện: Tiếng Việt
 
 **Prerequisites:**
 `Logged into the system as an active member, in the "Books" page`
@@ -105,7 +92,7 @@
 
 ---
 
-## BUG-03
+## BUG-03 - Allow the user to borrow the 4th book
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -116,16 +103,7 @@
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
-
-**Title:**
-`Allow the user to borrow the 4th book`
-
-
-**Environment**
-- Trình duyệt: Firefox `139`
-- Hệ điều hành: `Windows 11`
-- Ngôn ngữ giao diện: Tiếng Việt
-
+ 
 **Prerequisites:**
 `Active member, having already borrowed 3 books, books have "Available" status`
 
@@ -151,7 +129,7 @@
 
 ---
 
-## BUG-03
+## BUG-04 - System failed to add member with valid information
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -162,10 +140,6 @@
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
-
-**Title:**
-`System failed to add member with valid information`
-
 
 **Environment**
 - Trình duyệt: Firefox `139`
@@ -197,7 +171,7 @@
 
 ---
 
-## BUG-05
+## BUG-05 - System added member successfully with incorect email syntax
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -208,15 +182,6 @@
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
-
-**Title:**
-`System added member successfully with incorect email syntax`
-
-
-**Environment**
-- Trình duyệt: Firefox `139`
-- Hệ điều hành: `Windows 11`
-- Ngôn ngữ giao diện: Tiếng Việt
 
 **Prerequisites:**
 `Logged in as Librarian, member's email address is invalid, name and phone number is valid`
@@ -243,7 +208,7 @@
 
 ---
 
-## BUG-06
+## BUG-06 - The system displays incorrect message regarding email that has already existed in the database
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -254,15 +219,6 @@
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
-
-**Title:**
-`The system displays incorrect message regarding email that has already existed in the database`
-
-
-**Environment**
-- Trình duyệt: Firefox `139`
-- Hệ điều hành: `Windows 11`
-- Ngôn ngữ giao diện: Tiếng Việt
 
 **Prerequisites:**
 `Logged in as Librarian, member's email address match with one that exists in side the database, name and phone number is valid`
@@ -289,7 +245,7 @@
 
 ---
 
-## BUG-07
+## BUG-07 - Member can lookup other member's borrowing records
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
@@ -301,20 +257,11 @@
 | **Ngày phát hiện** | `30/05/2026` |
 | **Trạng thái** | `Open` |
 
-**Title:**
-`Member can lookup other member's borrowing records`
-
-
-**Environment**
-- Trình duyệt: Firefox `139`
-- Hệ điều hành: `Windows 11`
-- Ngôn ngữ giao diện: Tiếng Việt
-
 **Prerequisites:**
-`Logged in as an active member`
+`Logged in as an "MEM002"`
 
 **Steps:**
-1. `Log in the system as an active member`
+1. `Log in the system as "MEM002"`
 2. `Enter the "Borrow/Return" page`
 3. `Click "Search borrow records" on top-right corner`
 4. `Enter another member's ID in to the search bar`
