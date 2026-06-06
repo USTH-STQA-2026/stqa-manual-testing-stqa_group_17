@@ -16,7 +16,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `TC-12` |
+| **TC liên quan** | `TC-13` |
 | **REQ liên quan** | `REQ-03` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -63,7 +63,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `TC-13` |
+| **TC liên quan** | `TC-14` |
 | **REQ liên quan** | `REQ-03` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
