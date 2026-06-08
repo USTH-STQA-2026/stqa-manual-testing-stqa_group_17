@@ -29,7 +29,7 @@
 | **Trạng thái** | `Open` |
 
 **Prerequisites:**
-`Logged into the system as an active member, in the "Books" page`
+`Logged into the system as "MEM002", in the "Books" page`
 
 **Steps:**
 1. Click on the search bar: Filter by category(e.g. Technology, Economics...)
@@ -67,7 +67,7 @@
 | **Trạng thái** | `Open` |
 
 **Prerequisites:**
-`Logged into the system as an active member, in the "Books" page`
+`Logged into the system as "MEM002", in the "Books" page`
 
 **Steps:**
 1. Click on the search bar: Filter by category(e.g. Technology, Economics...)
@@ -105,10 +105,10 @@
 | **Trạng thái** | `Open` |
  
 **Prerequisites:**
-`Active member, having already borrowed 3 books, books have "Available" status`
+`Logged in the system as "MEM002", having already borrowed 3 books, books have "Available" status`
 
 **Steps:**
-1. `Log in the system with an active account`
+1. `Log in the system with as "MEM002"`
 2. `Borrow 4 books with the status "Available"`
 3. `Check the system response`
 
@@ -147,7 +147,7 @@
 - Ngôn ngữ giao diện: Tiếng Việt
 
 **Prerequisites:**
-`Logged in as Librarian, member information are valid`
+`Logged in as the Librarian, member information are valid`
 
 **Steps:**
 1. `Log in the system with the librarian account`
@@ -184,7 +184,7 @@
 | **Trạng thái** | `Open` |
 
 **Prerequisites:**
-`Logged in as Librarian, member's email address is invalid, name and phone number is valid`
+`Logged in as the Librarian, member's email address is invalid, name and phone number is valid`
 
 **Steps:**
 1. `Log in the system with the librarian account`
@@ -221,12 +221,12 @@
 | **Trạng thái** | `Open` |
 
 **Prerequisites:**
-`Logged in as Librarian, member's email address match with one that exists in side the database, name and phone number is valid`
+`Logged in as the Librarian, member's email address match with one that exists in side the database, name and phone number is valid`
 
 **Steps:**
 1. `Log in the system with the librarian account`
 2. `Click on the "Add member" at the top right corner`
-3. `Fill the boxes with ba.nguyen@email.com as email and valid name and phone number`
+3. `Fill the boxes with "ba.nguyen@email.com" as email and valid name and phone number`
 
 **Expected results:**
 `The system reject the request and display "Email already exists" error`
