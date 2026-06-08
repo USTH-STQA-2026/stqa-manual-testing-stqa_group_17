@@ -85,7 +85,7 @@
 `Affects user experience. Users who type in lower-case may not be able to find books and lead to thinking that the system does not have the book or the filter system is broken even though the book exists in the system`
 
 **Proof:**
-``
+![TC-13](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-013.png?raw=true)
 
 **Fix suggestions:**
 `Developer can normalize the user input in to the same format` 
@@ -122,7 +122,7 @@
 `Violates the business requirements`
 
 **Proof:**
-`<!-- -->`
+![TC-14](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-14.png?raw=true)
 
 **Fix suggestions**
 `Adjust the borrow count logic`
@@ -164,7 +164,7 @@
 `The add member button functionality is no longer met`
 
 **Proof:**
-`<!-- -->`
+![TC-26](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-26.png?raw=true)
 
 **Fix suggestions**
 `Adjust the correct syntax for email`
@@ -201,7 +201,7 @@
 `The add member button functionality is no longer met`
 
 **Proof:**
-`<!-- -->`
+![TC-29](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-29.png?raw=true)
 
 **Fix suggestions**
 `Adjust the correct syntax for email`
@@ -238,7 +238,7 @@
 `May cause the librarian to mistakenly think that the email is invalid instead of thinking it is already in the system database`
 
 **Proof:**
-`<!-- -->`
+![TC-30](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-30.png?raw=true)
 
 **Fix suggestions**
 `Give repeated email its own error`
@@ -278,7 +278,7 @@
 `Privacy and access control violation`
 
 **Proof:**
-`<!-- -->`
+![TC-33](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-33.png?raw=true)
 
 **Fix suggestions**
 `Adjust member permission or make sure that the member's ID matches the searched member's ID`
