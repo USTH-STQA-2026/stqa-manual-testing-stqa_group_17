@@ -189,7 +189,7 @@
 **Steps:**
 1. `Log in the system with the librarian account`
 2. `Click on the "Add member" at the top right corner`
-3. `Fill the boxes with tester@emailcom as email information and valid name and phone number`
+3. `Fill the boxes with "tester@emailcom" as email information and valid name and phone number`
 
 **Expected results:**
 `The system reject the request and display an error regarding incorrect email syntax`
