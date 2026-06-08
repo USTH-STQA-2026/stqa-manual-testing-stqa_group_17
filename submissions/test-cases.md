@@ -190,5 +190,11 @@
 
 | Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
 |----------------|-------|---------|----------------------|
-| | | | |
+| Đăng nhập| 4 | REQ-01 | EP, BVA |
+| Xem danh sách sách| 3 | REQ-02 | EP
+| Tìm kiếm | 7 | REQ-03 | EP
+| Mượn sách | 5 | REQ-04, 05 | EP, BVA
+| Xử lý sách quá hạn| 5 | REQ-06 | EP, BVA 
+| Quản lý thành viên | 6 | REQ-07 | EP, BVA
+| Tra cứu phiếu mượn| 4 | REQ-08 | EP
 | Tổng | 34 | 8 | EP, BVA |
