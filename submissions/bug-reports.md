@@ -47,7 +47,7 @@
 `Affects user experience. Users who type in lower-case may not be able to find books and lead to thinking that the system does not have the book or the filter system is broken even though the book exists in the system`
 
 **Proof:**
-``
+![TC-13](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-013.png?raw=true)
 
 **Fix suggestions:**
 `Developer can normalize the user input in to the same format` 
@@ -85,7 +85,7 @@
 `Affects user experience. Users who type in lower-case may not be able to find books and lead to thinking that the system does not have the book or the filter system is broken even though the book exists in the system`
 
 **Proof:**
-![TC-13](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-013.png?raw=true)
+![TC-13](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-14.png?raw=true)
 
 **Fix suggestions:**
 `Developer can normalize the user input in to the same format` 
