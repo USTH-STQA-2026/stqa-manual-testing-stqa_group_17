@@ -126,64 +126,62 @@
 ### Bảng Test Cases — REQ-02: Xem danh sách sách 
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-05 | Kiểm tra danh sách sách hiển thị cho thành viên và thủ thư | Người dùng có tài khoản hợp lệ | 1. Đăng nhập vào hệ thống 2.Vào phần "Sách" 3.Nhìn vào danh sách sách | Tài khoản bất kỳ hợp lệ | Danh sách sách hiện cho cả thủ thư và thành viên | REQ-02 | EP
-| TC-06 | Kiểm tra sách hiển thị đầy đủ thông tin | Người dùng đã đăng nhập và đang ở dao diện "Sách" | 1. Vào phần "Sách" 2.Xem phần thông tin sách được hiển thị | Bất kỳ cuốn sách nào | Hiển thị tên sách, tác giả, năm xuất bản và trạng thái| REQ-02 | EP
-| TC-07 | Kiểm tra sách hiển thị trạng thái đúng | Người dùng đã đăng nhập và đang nhìn vào danh sách sách | 1. Vào phần "Sách" 2. Kiểm tra trạng thái của sách| Sách có trạng thái khác nhau | Hệ thống hiển thị trạng thái đúng cho từng sách bao gồm "Có sẵn", "Đang mượn", "Thất lạc" | REQ-02 | EP
-
+| TC-05 | Kiểm tra danh sách sách hiển thị đầy đủ thông tin cho thành viên và thủ thư | Người dùng có tài khoản hợp lệ | 1. Đăng nhập vào hệ thống 2.Vào phần "Sách" 3.Nhìn vào danh sách sách | Tài khoản bất kỳ hợp lệ | Danh sách hiển thị tên sách, tên tác giả, năm xuất bản và trạng thái | REQ-02 | EP
+| TC-06 | Kiểm tra sách cập nhật trạng thái đúng trong real-time | Người dùng có tài khoản hợp lệ | 1. Đăng nhập vào hệ thống bằng tài khoản người dùng 2.Vào phần "Sách" 3. Nhấn nút `Mượn sách này` trên sách có trạng thái `Có sẵn` 4. Nhấn "Mượn" để xác nhận mượn sách 5. Quan sát trạng thái sách thay đổi| Tài khoản người dùng hợp lệ | Trạng thái sách thay đổi từ "Có sẵn" sang "Đang mượn" ngay lập tức | REQ-02 | EP 
 ---
 
 ### Bảng Test Cases — REQ-03: Tìm kiếm sách
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-08 | Tìm sách thành công bằng một phần tên sách | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa tên sách. 3.Nhấn Tìm kiếm | Từ khóa: `"Flutter"` | Hiển thị danh sách các cuốn sách có chứa từ "Flutter". | REQ-03 | EP |
-| TC-09 | Tìm sách thành công bằng tên tác giả | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập tên tác giả. 3.Nhấn Tìm kiếm | Từ khóa: `"Nguyễn"` | Hiển thị danh sách sách của tác giả có tên "Nguyễn". | REQ-03 | EP |
-| TC-10 | Tìm sách không tồn tại | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập chuỗi ngẫu nhiên. 3.Nhấn Tìm kiếm | Từ khóa: `"XYZ123"` | Hiển thị danh sách rỗng. | REQ-03 | EP |
-| TC-11 | Tìm tên sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"FLUTTER"` | Kết quả hiển thị giống như khi tìm `"Flutter"`. | REQ-03 | EP |
-| TC-12 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"Kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
-| TC-13 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
-| TC-14 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"KINH TẾ"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
+| TC-07 | Tìm sách thành công bằng một phần tên sách | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa tên sách. 3.Nhấn Tìm kiếm | Từ khóa: `"Flutter"` | Hiển thị danh sách các cuốn sách có chứa từ "Flutter". | REQ-03 | EP |
+| TC-8 | Tìm sách thành công bằng tên tác giả | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập tên tác giả. 3.Nhấn Tìm kiếm | Từ khóa: `"Nguyễn"` | Hiển thị danh sách sách của tác giả có tên "Nguyễn". | REQ-03 | EP |
+| TC-9 | Tìm sách không tồn tại | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập chuỗi ngẫu nhiên. 3.Nhấn Tìm kiếm | Từ khóa: `"XYZ123"` | Hiển thị danh sách rỗng. | REQ-03 | EP |
+| TC-10 | Tìm tên sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"FLUTTER"` | Kết quả hiển thị giống như khi tìm `"Flutter"`. | REQ-03 | EP |
+| TC-11 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"Kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
+| TC-12 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
+| TC-13 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"KINH TẾ"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
 ---
 
 ### Bảng Test Cases — REQ-04, REQ-05: Mượn sách
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-15 | Mượn sách thành công (Điều kiện lý tưởng) | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Chọn sách có trạng thái "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 0 | Hệ thống cho phép mượn, tạo phiếu mượn thành công. | REQ-04, 05 | EP, BVA |  
-| TC-16 | Chặn mượn sách đang được người khác mượn | Đăng nhập tài khoản Thành viên Hoạt động | 1.Tìm sách đang có trạng thái "Đang mượn". 2.Nhấn Mượn sách | Sách: `BOOK003` | Nút mượn bị mờ hoặc hệ thống báo lỗi không cho phép. | REQ-04, 05 | EP |
-| TC-17 | Chặn mượn sách khi tài khoản bị Tạm ngưng | Đăng nhập tài khoản Tạm ngưng (`cu.le@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Tạm ngưng | Từ chối mượn, thông báo lỗi tài khoản đang bị tạm ngưng. | REQ-04, 05 | EP |
-| TC-18 | Chặn mượn sách khi tài khoản đã Hết hạn | Đăng nhập tài khoản Hết hạn (`binh.pham@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Hết hạn | Từ chối mượn, thông báo lỗi tài khoản đã hết hạn. | REQ-04, 05 | EP |
-| TC-19 | Chặn mượn sách khi đã đạt giới hạn tối đa (3 cuốn) | Đăng nhập tài khoản đã mượn đủ 3 cuốn | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 3 | Từ chối, thông báo số lượng sách mượn vượt quá giới hạn. | REQ-04, 05 | BVA |
+| TC-14 | Mượn sách thành công (Điều kiện lý tưởng) | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Chọn sách có trạng thái "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 0 | Hệ thống cho phép mượn, tạo phiếu mượn thành công. | REQ-04, 05 | EP, BVA |  
+| TC-15 | Chặn mượn sách đang được người khác mượn | Đăng nhập tài khoản Thành viên Hoạt động | 1.Tìm sách đang có trạng thái "Đang mượn". 2.Nhấn Mượn sách | Sách: `BOOK003` | Nút mượn bị mờ hoặc hệ thống báo lỗi không cho phép. | REQ-04, 05 | EP |
+| TC-16 | Chặn mượn sách khi tài khoản bị Tạm ngưng | Đăng nhập tài khoản Tạm ngưng (`cu.le@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Tạm ngưng | Từ chối mượn, thông báo lỗi tài khoản đang bị tạm ngưng. | REQ-04, 05 | EP |
+| TC-17 | Chặn mượn sách khi tài khoản đã Hết hạn | Đăng nhập tài khoản Hết hạn (`binh.pham@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Hết hạn | Từ chối mượn, thông báo lỗi tài khoản đã hết hạn. | REQ-04, 05 | EP |
+| TC-18 | Chặn mượn sách khi đã đạt giới hạn tối đa (3 cuốn) | Đăng nhập tài khoản đã mượn đủ 3 cuốn | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 3 | Từ chối, thông báo số lượng sách mượn vượt quá giới hạn. | REQ-04, 05 | BVA |
 
 ---
 
 ### Bảng Test Cases — REQ-06: Xử lý sách quá hạn
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-20 | Phân quyền hiển thị nút Xử lý quá hạn (Thủ thư) | Đăng nhập tài khoản Thủ thư (`librarian@library.com`) | 1.Truy cập trang Quản lý mượn trả | - | Nhìn thấy nút "Kiểm tra sách quá hạn". | REQ-06 | EP |
-| TC-21 | Phân quyền hiển thị nút Xử lý quá hạn (Thành viên) | Đăng nhập tài khoản Thành viên (`ba.nguyen@email.com`) | 1.Truy cập trang Quản lý mượn trả / Phiếu mượn | - | Không nhìn thấy nút "Kiểm tra sách quá hạn". | REQ-06 | EP |
-| TC-22 | Đánh dấu phiếu mượn quá hạn | Thủ thư nhấn nút Kiểm tra sách quá hạn | 1.Hệ thống quét các phiếu mượn đang có | Phiếu: `BR001` Hạn trả: 15/09/2024 (<= Hôm nay) | Phiếu BR001 được cập nhật trạng thái thành "Quá hạn". | REQ-06 | EP, BVA |
-| TC-23 | Không thay đổi trạng thái phiếu chưa đến hạn | Thủ thư nhấn nút Kiểm tra sách quá hạn | 1.Hệ thống quét các phiếu mượn đang có | Phiếu: Mới tạo hôm nay (Hạn trả > Hôm nay) | Phiếu giữ nguyên trạng thái "Đang mượn". | REQ-06 | EP, BVA |
-| TC-24 | Hiển thị phiếu quá hạn cho chính thành viên đó | Đăng nhập Thành viên `MEM002` (có phiếu quá hạn) | 1.Truy cập danh sách phiếu mượn của tôi | - | Nhìn thấy phiếu mượn của mình bị đánh dấu đỏ hay quá hạn. | REQ-06 | EP |
+| TC-19 | Phân quyền hiển thị nút Xử lý quá hạn (Thủ thư) | Đăng nhập tài khoản Thủ thư (`librarian@library.com`) | 1.Truy cập trang Quản lý mượn trả | - | Nhìn thấy nút "Kiểm tra sách quá hạn". | REQ-06 | EP |
+| TC-20 | Phân quyền hiển thị nút Xử lý quá hạn (Thành viên) | Đăng nhập tài khoản Thành viên (`ba.nguyen@email.com`) | 1.Truy cập trang Quản lý mượn trả / Phiếu mượn | - | Không nhìn thấy nút "Kiểm tra sách quá hạn". | REQ-06 | EP |
+| TC-21 | Đánh dấu phiếu mượn quá hạn | Thủ thư nhấn nút Kiểm tra sách quá hạn | 1.Hệ thống quét các phiếu mượn đang có | Phiếu: `BR001` Hạn trả: 15/09/2024 (<= Hôm nay) | Phiếu BR001 được cập nhật trạng thái thành "Quá hạn". | REQ-06 | EP, BVA |
+| TC-22 | Không thay đổi trạng thái phiếu chưa đến hạn | Thủ thư nhấn nút Kiểm tra sách quá hạn | 1.Hệ thống quét các phiếu mượn đang có | Phiếu: Mới tạo hôm nay (Hạn trả > Hôm nay) | Phiếu giữ nguyên trạng thái "Đang mượn". | REQ-06 | EP, BVA |
+| TC-23 | Hiển thị phiếu quá hạn cho chính thành viên đó | Đăng nhập Thành viên `MEM002` (có phiếu quá hạn) | 1.Truy cập danh sách phiếu mượn của tôi | - | Nhìn thấy phiếu mượn của mình bị đánh dấu đỏ hay quá hạn. | REQ-06 | EP |
 ---
 
 ### Bảng Test Cases — REQ-07: Quản lý thành viên
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-25 | Phân quyền hiển thị nút Thêm thành viên | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang chủ| - | Nhìn thấy nút/chức năng "Thêm thành viên". | REQ-07 | EP |
-| TC-26 | Thêm thành viên | Đăng nhập tài khoản thủ thư | 1. Truy cập trang chủ 2. Nhấn nút thêm thành viên 3.Điền thông tin thành viên hợp lệ 4.Nhấn nút thêm thành viên | Họ tên: `Tester` Email:'Tester@email.com' SĐT: `0123456789` | Thêm thành viên thành công | REQ-07 | EP 
-| TC-27 | Thêm thành viên thất bại do bỏ trống Họ tên | Thủ thư ở trang Thêm TV | 1.Bỏ trống Họ tên. 2.Nhập Email hợp lệ. 3.Nhập số điện thoại hợp lệ 4.Nhấn Lưu | Họ tên: `""` Email: `test@email.com` SĐT: `"0123456789"` | Báo lỗi "Họ tên không được để trống". | REQ-07 | EP, BVA |
-| TC-28 | Thêm thành viên thất bại do sai định dạng Email (thiếu @) | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email thiếu "@". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtestemail.com` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ. | REQ-07 | EP |
-| TC-29 | Thêm thành viên thất bại do sai định dạng Email (thiếu ".")  | Thủ thư ở trang thêm thành viên | 1.Nhập Họ tên. 2.Nhập Email thiếu ".". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtest@emailcom` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ | REQ-07 | EP |
-| TC-30 | Thêm thành viên thất bại do trùng Email đã có | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email của TV đang có. 3.Lưu | Họ tên: `Tester` Email: `ba.nguyen@email.com` SĐT:0123456789 | Báo lỗi email đã tồn tại trong hệ thống. | REQ-07 | EP |
+| TC-24 | Phân quyền hiển thị nút Thêm thành viên | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang chủ| - | Nhìn thấy nút/chức năng "Thêm thành viên". | REQ-07 | EP |
+| TC-25 | Thêm thành viên | Đăng nhập tài khoản thủ thư | 1. Truy cập trang chủ 2. Nhấn nút thêm thành viên 3.Điền thông tin thành viên hợp lệ 4.Nhấn nút thêm thành viên | Họ tên: `Tester` Email:'Tester@email.com' SĐT: `0123456789` | Thêm thành viên thành công | REQ-07 | EP 
+| TC-26 | Thêm thành viên thất bại do bỏ trống Họ tên | Thủ thư ở trang Thêm TV | 1.Bỏ trống Họ tên. 2.Nhập Email hợp lệ. 3.Nhập số điện thoại hợp lệ 4.Nhấn Lưu | Họ tên: `""` Email: `test@email.com` SĐT: `"0123456789"` | Báo lỗi "Họ tên không được để trống". | REQ-07 | EP, BVA |
+| TC-27 | Thêm thành viên thất bại do sai định dạng Email (thiếu @) | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email thiếu "@". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtestemail.com` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ. | REQ-07 | EP |
+| TC-28 | Thêm thành viên thất bại do sai định dạng Email (thiếu ".")  | Thủ thư ở trang thêm thành viên | 1.Nhập Họ tên. 2.Nhập Email thiếu ".". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtest@emailcom` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ | REQ-07 | EP |
+| TC-29 | Thêm thành viên thất bại do trùng Email đã có | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email của TV đang có. 3.Lưu | Họ tên: `Tester` Email: `ba.nguyen@email.com` SĐT:0123456789 | Báo lỗi email đã tồn tại trong hệ thống. | REQ-07 | EP |
 
 ---
 
 ### Bảng Test Cases — REQ-08: Tra cứu phiếu mượn
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-31 | Tra cứu toàn bộ phiếu mượn (Dành cho Thủ thư) | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang Tra cứu phiếu mượn | - | Xem được danh sách phiếu mượn của tất cả các thành viên. | REQ-08 | EP |
-| TC-32 | Thành viên chỉ tra cứu được phiếu của mình | Đăng nhập tài khoản Thành viên `MEM002` | 1.Truy cập trang Tra cứu phiếu mượn | - | Chỉ hiển thị các phiếu mượn thuộc về `MEM002`. | REQ-08 | EP |
-| TC-33 | Thành viên cố tình xem phiếu của người khác qua URL/Tìm kiếm | Đăng nhập Thành viên `MEM002` | 1.Cố gắng nhập mã phiếu/mã TV của `MEM003` để tìm kiếm | Mã cần tìm: Phiếu của `MEM003` | Hệ thống báo không tìm thấy hoặc chặn hiển thị dữ liệu. | REQ-08 | EP |
-| TC-34 | Kiểm tra hiển thị đầy đủ chi tiết thông tin của phiếu mượn | Đã đăng nhập hệ thống và ở trang Tra cứu phiếu mượn | 1.Nhập mã thành viên hợp lệ vào ô tìm kiếm. 2.Nhấn Tìm kiếm | Mã thành viên : `MEM002` | Hệ thống hiển thị chính xác và đầy đủ các thông tin: mã phiếu, sách mượn, ngày mượn, ngày hết hạn, và trạng thái phiếu. | REQ-08 | EP |
+| TC-30 | Tra cứu toàn bộ phiếu mượn (Dành cho Thủ thư) | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang Tra cứu phiếu mượn | - | Xem được danh sách phiếu mượn của tất cả các thành viên. | REQ-08 | EP |
+| TC-31 | Thành viên chỉ tra cứu được phiếu của mình | Đăng nhập tài khoản Thành viên `MEM002` | 1.Truy cập trang Tra cứu phiếu mượn | - | Chỉ hiển thị các phiếu mượn thuộc về `MEM002`. | REQ-08 | EP |
+| TC-32 | Thành viên cố tình xem phiếu của người khác qua URL/Tìm kiếm | Đăng nhập Thành viên `MEM002` | 1.Cố gắng nhập mã phiếu/mã TV của `MEM003` để tìm kiếm | Mã cần tìm: Phiếu của `MEM003` | Hệ thống báo không tìm thấy hoặc chặn hiển thị dữ liệu. | REQ-08 | EP |
+| TC-33 | Kiểm tra hiển thị đầy đủ chi tiết thông tin của phiếu mượn | Đã đăng nhập hệ thống và ở trang Tra cứu phiếu mượn | 1.Nhập mã thành viên hợp lệ vào ô tìm kiếm. 2.Nhấn Tìm kiếm | Mã thành viên : `MEM002` | Hệ thống hiển thị chính xác và đầy đủ các thông tin: mã phiếu, sách mượn, ngày mượn, ngày hết hạn, và trạng thái phiếu. | REQ-08 | EP |
 ---
 
 ## Tổng hợp
@@ -191,10 +189,10 @@
 | Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
 |----------------|-------|---------|----------------------|
 | Đăng nhập| 4 | REQ-01 | EP, BVA |
-| Xem danh sách sách| 3 | REQ-02 | EP
+| Xem danh sách sách| 2 | REQ-02 | EP
 | Tìm kiếm | 7 | REQ-03 | EP
 | Mượn sách | 5 | REQ-04, 05 | EP, BVA
 | Xử lý sách quá hạn| 5 | REQ-06 | EP, BVA 
 | Quản lý thành viên | 6 | REQ-07 | EP, BVA
 | Tra cứu phiếu mượn| 4 | REQ-08 | EP
-| Tổng | 34 | 8 | EP, BVA |
+| Tổng | 33 | 8 | EP, BVA |
