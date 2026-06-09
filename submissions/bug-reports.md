@@ -21,7 +21,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `TC-13` |
+| **TC liên quan** | `TC-12` |
 | **REQ liên quan** | `REQ-03` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -47,7 +47,7 @@
 `Affects user experience. Users who type in lower-case may not be able to find books and lead to thinking that the system does not have the book or the filter system is broken even though the book exists in the system`
 
 **Proof:**
-![TC-13](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-013.png?raw=true)
+![TC-12](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-013.png?raw=true)
 
 **Fix suggestions:**
 `Developer can normalize the user input in to the same format` 
@@ -59,7 +59,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `TC-14` |
+| **TC liên quan** | `TC-13` |
 | **REQ liên quan** | `REQ-03` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -97,7 +97,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-03 |
-| **TC liên quan** | `TC-19` |
+| **TC liên quan** | `TC-18` |
 | **REQ liên quan** | `REQ-04,05` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -122,7 +122,7 @@
 `Violates the business requirements`
 
 **Proof:**
-![TC-14](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-14.png?raw=true)
+![TC-18](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-19.png?raw=true)
 
 **Fix suggestions**
 `Adjust the borrow count logic`
@@ -134,7 +134,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-04 |
-| **TC liên quan** | `TC-26` |
+| **TC liên quan** | `TC-25` |
 | **REQ liên quan** | `REQ-07` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -164,7 +164,7 @@
 `The add member button functionality is no longer met`
 
 **Proof:**
-![TC-26](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-26.png?raw=true)
+![TC-25](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-26.png?raw=true)
 
 **Fix suggestions**
 `Adjust the correct syntax for email`
@@ -176,7 +176,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-05 |
-| **TC liên quan** | `TC-29` |
+| **TC liên quan** | `TC-28` |
 | **REQ liên quan** | `REQ-07` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -201,7 +201,7 @@
 `The add member button functionality is no longer met`
 
 **Proof:**
-![TC-29](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-29.png?raw=true)
+![TC-28](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-29.png?raw=true)
 
 **Fix suggestions**
 `Adjust the correct syntax for email`
@@ -213,7 +213,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-06 |
-| **TC liên quan** | `TC-30` |
+| **TC liên quan** | `TC-29` |
 | **REQ liên quan** | `REQ-07` |
 | **Mức độ** | `Low` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -238,7 +238,7 @@
 `May cause the librarian to mistakenly think that the email is invalid instead of thinking it is already in the system database`
 
 **Proof:**
-![TC-30](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-30.png?raw=true)
+![TC-29](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-30.png?raw=true)
 
 **Fix suggestions**
 `Give repeated email its own error`
@@ -250,7 +250,7 @@
 | Thuộc tính | Chi tiết |
 |-----------|---------|
 | **Mã lỗi** | BUG-07 |
-| **TC liên quan** | `TC-33` |
+| **TC liên quan** | `TC-32` |
 | **REQ liên quan** | `REQ-08` |
 | **Mức độ** | `High` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
@@ -278,7 +278,7 @@
 `Privacy and access control violation`
 
 **Proof:**
-![TC-33](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-33.png?raw=true)
+![TC-32](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-33.png?raw=true)
 
 **Fix suggestions**
 `Adjust member permission or make sure that the member's ID matches the searched member's ID`

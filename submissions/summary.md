@@ -19,12 +19,12 @@
 
 | Chỉ số | Giá trị |
 |--------|---------|
-| Tổng số test case | `34` |
-| Pass | `27` |
+| Tổng số test case | `33` |
+| Pass | `26` |
 | Fail | `7` |
 | Blocked | `0` |
 | Not Run | `0` |
-| **Tỷ lệ Pass** | `79.4%` |
+| **Tỷ lệ Pass** | `78.8%` |
 | **Số bug phát hiện** | `7` |
 
 ### Phân bổ theo nhóm chức năng
@@ -32,13 +32,13 @@
 | Nhóm chức năng | TC | Pass | Fail | Bug | Đánh giá |
 |---------------|-----|------|------|-----|---------|
 | Đăng nhập (REQ-01) | 4 | 4 | 0 | 0 | ✅ Tốt — hoạt động đúng theo yêu cầu |
-| Xem danh sách sách (REQ-02) | 3 | 3 | 0 | 0 | ✅ Tốt — hiển thị đầy đủ, đúng trạng thái |
+| Xem danh sách sách (REQ-02) | 2 | 2 | 0 | 0 | ✅ Tốt — hiển thị đầy đủ, đúng trạng thái |
 | Tìm kiếm sách (REQ-03) | 7 | 5 | 2 | 2 | ⚠️ Có lỗi — tìm theo thể loại phân biệt hoa/thường |
 | Mượn sách (REQ-04, 05) | 5 | 4 | 1 | 1 | ⚠️ Có lỗi nghiêm trọng — vượt giới hạn 3 sách |
 | Xử lý sách quá hạn (REQ-06) | 5 | 5 | 0 | 0 | ✅ Tốt — phân quyền và xử lý đúng |
 | Quản lý thành viên (REQ-07) | 6 | 3 | 3 | 3 | ❌ Yếu — nhiều lỗi validate email nghiêm trọng |
 | Tra cứu phiếu mượn (REQ-08) | 4 | 3 | 1 | 1 | ⚠️ Có lỗi — vi phạm quyền riêng tư dữ liệu |
-| **Tổng** | **34** | **27** | **7** | **7** | |
+| **Tổng** | **33** | **26** | **7** | **7** | |
 
 ### Phân bổ bug theo mức độ
 
@@ -54,9 +54,9 @@
 
 | Kỹ thuật | Áp dụng cho REQ nào? | Số TC sử dụng | Giải thích cách áp dụng |
 |----------|---------------------|---------------|------------------------|
-| **EP** (Equivalence Partitioning — Phân lớp tương đương) | REQ-01 → REQ-08 (tất cả) | 34 | Phân chia đầu vào thành các lớp tương đương: hợp lệ / không hợp lệ / rỗng. Ví dụ: email tồn tại / không tồn tại, tài khoản hoạt động / tạm ngưng / hết hạn |
-| **BVA** (Boundary Value Analysis — Phân tích giá trị biên) | REQ-01, REQ-04, REQ-05, REQ-06 | 8 | Kiểm tra các giá trị biên: ô nhập rỗng (TC-04), số sách mượn tại đúng giới hạn 3 cuốn (TC-15, TC-19), ngày hết hạn đúng ngày hôm nay / vượt ngày (TC-22, TC-23) |
-| **IDM** (Input Domain Modeling — Mô hình hóa miền đầu vào) | REQ-01 → REQ-08 (tất cả) | 34 | Phân tích đặc tính (Characteristic), phân vùng (Block), và giá trị đại diện (Value) trước khi thiết kế TC. Áp dụng cho tất cả 8 chức năng |
+| **EP** (Equivalence Partitioning — Phân lớp tương đương) | REQ-01 → REQ-08 (tất cả) | 33 | Phân chia đầu vào thành các lớp tương đương: hợp lệ / không hợp lệ / rỗng. Ví dụ: email tồn tại / không tồn tại, tài khoản hoạt động / tạm ngưng / hết hạn |
+| **BVA** (Boundary Value Analysis — Phân tích giá trị biên) | REQ-01, REQ-04, REQ-05, REQ-06 | 8 | Kiểm tra các giá trị biên: ô nhập rỗng (TC-04), số sách mượn tại đúng giới hạn 3 cuốn (TC-14, TC-18), ngày hết hạn đúng ngày hôm nay / vượt ngày (TC-21, TC-22) |
+| **IDM** (Input Domain Modeling — Mô hình hóa miền đầu vào) | REQ-01 → REQ-08 (tất cả) | 33 | Phân tích đặc tính (Characteristic), phân vùng (Block), và giá trị đại diện (Value) trước khi thiết kế TC. Áp dụng cho tất cả 8 chức năng |
 
 ---
 
