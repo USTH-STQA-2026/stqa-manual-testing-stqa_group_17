@@ -1,8 +1,5 @@
 # Test Cases — Bảng trường hợp kiểm thử
 
-> **Hướng dẫn**: Viết tối thiểu **20 TC** phủ đủ các chức năng chính (REQ-01 → REQ-08).
-> Xem [examples/sample-test-case.md](../examples/sample-test-case.md) để hiểu cách viết TC tốt.
-> Tự tổ chức và phân nhóm test case theo cách hợp lý nhất.
 
 | Thông tin | |
 |---|---|
@@ -55,7 +52,7 @@
 | | Uppercase | `"KINH TẾ"` | Same results as "Kinh tế"
 
 
-### IDM — Borrow/Return (REQ-04, REQ-05)
+### IDM — Borrow (REQ-04)
 
 | Characteristic | Block | Value | Expected results |
 |---|---|---|---|
@@ -66,8 +63,13 @@
 | | Suspended | MEM004 | Reject, display error message |
 | | Expired| MEM005 | Reject, display error message |
 | Number of borrowed books| < 3 (BVA: 0, 1, 2) | MEM006 (0 book) | Allow|
-| | = 3 (BVA: boundary) | MEM has borrowed 3 sách | Reject, display exceeded limit error |
-| | >3 | MEM has borrowed more than 3 books | Reject, display exceeded limit error
+| | = 3 (BVA: boundary) | MEM has borrowed 3 books | Reject, display "exceeded limit" error |
+| | >3 | MEM has borrowed more than 3 books | Reject, display "exceeded limit" error
+
+
+### IDM — Return (REQ-05)
+| Characteristic | Block | Value | Expected results |
+|---|---|---|---|
 | Borrow record status | Borrowing | `BR001` | Allow return
 | | Returned | `BR004` | Can not return
 | Due date compared to current date | currentDate < dueDate | `10/09/2024 < 15/09/2024` | Return book sucessfully without warning
@@ -162,7 +164,7 @@
 | TC-15 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"KINH TẾ"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
 ---
 
-### Bảng Test Cases — REQ-04, REQ-05: Borrow/Return
+### Bảng Test Cases — REQ-04 - Borrow
 | Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
 | TC-16 | Mượn sách thành công (Điều kiện lý tưởng) | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Chọn sách có trạng thái "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 0 | Hệ thống cho phép mượn, tạo phiếu mượn thành công. | REQ-04, 05 | EP, BVA, Decision Table |  
@@ -170,6 +172,11 @@
 | TC-18 | Chặn mượn sách khi tài khoản bị Tạm ngưng | Đăng nhập tài khoản Tạm ngưng (`cu.le@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Tạm ngưng | Từ chối mượn, thông báo lỗi tài khoản đang bị tạm ngưng. | REQ-04, 05 | EP, Decision Table |
 | TC-19 | Chặn mượn sách khi tài khoản đã Hết hạn | Đăng nhập tài khoản Hết hạn (`binh.pham@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Hết hạn | Từ chối mượn, thông báo lỗi tài khoản đã hết hạn. | REQ-04, 05 | EP, Decision Table |
 | TC-20 | Chặn mượn sách khi đã đạt giới hạn tối đa (3 cuốn) | Đăng nhập tài khoản đã mượn đủ 3 cuốn | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 3 | Từ chối, thông báo số lượng sách mượn vượt quá giới hạn. | REQ-04, 05 | EP,Decision Table |
+
+---
+### Bảng Test Cases — REQ-05: Return
+| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+|-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
 | TC-21 | Trả sách đúng hạn | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Access borrow/return tab. 2.Select an active record that is not overdue. 3.Click return book.  | - | -Book is returned successfully<br />-No overdue warning displayed | REQ-04,05 | EP,BVA,Decision Table
 | TC-22 | Return overdue books | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Access borrow/return tab. 2.Select an active record that is overdue. 3.Click return book. | - | -Book is returned successfully<br />-Overdue warning displayed | REQ-04,05 | EP,BVA,Decision Table 
 ---
