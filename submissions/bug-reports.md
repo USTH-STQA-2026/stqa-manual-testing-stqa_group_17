@@ -120,7 +120,7 @@
 `Violates the business rule`
 
 **Proof:**
-![TC-18](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-18.png?raw=true)
+![TC-18](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-18-bug03.png?raw=true)
 
 **Fix suggestions**
 `Correct the error message to "member has been suspended"`
