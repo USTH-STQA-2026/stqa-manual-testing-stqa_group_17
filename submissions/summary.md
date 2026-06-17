@@ -1,134 +1,133 @@
-# Test Summary — Báo cáo tổng hợp kiểm thử
+# Test Summary 
 
-> **Hướng dẫn**: Đây là hoạt động **Quality Assurance** — bạn đánh giá chất lượng tổng thể của phần mềm, không chỉ liệt kê lỗi.
 
 ---
 
-## 1. Thông tin nhóm
+## 1. Group information 
 
-| Mục | Thông tin |
+| Attributes | Information |
 |-----|----------|
-| **Nhóm** | `Nhóm 17` |
-| **Lớp** | `STQA2A` |
-| **Ngày báo cáo** | `02/06/2026` |
-| **Hệ thống kiểm thử** | https://stqa.rbc.vn — v1.0 |
+| **Group** | `Nhóm 17` |
+| **Class** | `STQA2A` |
+| **Report date** | `02/06/2026` |
+| **Tested system** | https://stqa.rbc.vn — v1.0 |
 
 ---
 
-## 2. Tổng quan kết quả
+## 2. Results overview
 
-| Chỉ số | Giá trị |
+| Attribute| Value |
 |--------|---------|
-| Tổng số test case | `33` |
-| Pass | `26` |
-| Fail | `7` |
+| Total test cases| `38` |
+| Pass | `28` |
+| Fail | `10` |
 | Blocked | `0` |
 | Not Run | `0` |
-| **Tỷ lệ Pass** | `78.8%` |
-| **Số bug phát hiện** | `7` |
+| **Pass Rate** | `73.6%` |
+| **Bugs Reported** | `9` |
 
-### Phân bổ theo nhóm chức năng
+### Distribution by functional group
 
-| Nhóm chức năng | TC | Pass | Fail | Bug | Đánh giá |
+| Functional Group| TC | Pass | Fail | Bug | Review |
 |---------------|-----|------|------|-----|---------|
-| Đăng nhập (REQ-01) | 4 | 4 | 0 | 0 | ✅ Tốt — hoạt động đúng theo yêu cầu |
-| Xem danh sách sách (REQ-02) | 2 | 2 | 0 | 0 | ✅ Tốt — hiển thị đầy đủ, đúng trạng thái |
-| Tìm kiếm sách (REQ-03) | 7 | 5 | 2 | 2 | ⚠️ Có lỗi — tìm theo thể loại phân biệt hoa/thường |
-| Mượn sách (REQ-04, 05) | 5 | 4 | 1 | 1 | ⚠️ Có lỗi nghiêm trọng — vượt giới hạn 3 sách |
-| Xử lý sách quá hạn (REQ-06) | 5 | 5 | 0 | 0 | ✅ Tốt — phân quyền và xử lý đúng |
-| Quản lý thành viên (REQ-07) | 6 | 3 | 3 | 3 | ❌ Yếu — nhiều lỗi validate email nghiêm trọng |
-| Tra cứu phiếu mượn (REQ-08) | 4 | 3 | 1 | 1 | ⚠️ Có lỗi — vi phạm quyền riêng tư dữ liệu |
-| **Tổng** | **33** | **26** | **7** | **7** | |
+| Login (REQ-01) | 6 | 6 | 0 | 0 | ✅ Good — working as intended |
+| View book list (REQ-02) | 2 | 2 | 0 | 0 | ✅ Good — working as intended |
+| Search Function (REQ-03) | 7 | 5 | 2 | 2 | ⚠️ Contain bugs — uppercase/lowercase normalization |
+| Borrow book (REQ-04) | 5 | 3 | 2 | 2 | ⚠️ Contains volatile bugs — exceed 3-books limit |
+| Return book (REQ-05) | 2 | 1 | 1 | 1 | ⚠️ Contains bug - system does not have an overdue warning |
+| Overdue handling (REQ-06) | 5 | 5 | 0 | 0 | ✅ Good — Working as intended |
+| Member management (REQ-07) | 7 | 3 | 4 | 3 | ⚠️ Contain bugs - email validation  |
+| Record lookup (REQ-08) | 4 | 3 | 1 | 1 | ⚠️ Contain bugs — violates security requirements |
+| **Total** | **38** | **28** | **10** | **9** | |
 
-### Phân bổ bug theo mức độ
+### Distribute bug by severity
 
-| Mức độ | Số lượng | Bug IDs |
+| Severity | Quantity | Bug IDs |
 |--------|---------|---------|
-| High | 6 | BUG-01, BUG-02, BUG-03, BUG-04, BUG-05, BUG-07 |
-| Medium | 0 | — |
-| Low | 1 | BUG-06 |
+| High | 7 | BUG-01, BUG-02, BUG-03, BUG-04, BUG-06, BUG-07, BUG-09 |
+| Medium | 1 | BUG-05 |
+| Low | 1 | BUG-08 |
 
 ---
 
-## 3. Kỹ thuật thiết kế đã sử dụng
+## 3. Techniques used 
 
-| Kỹ thuật | Áp dụng cho REQ nào? | Số TC sử dụng | Giải thích cách áp dụng |
-|----------|---------------------|---------------|------------------------|
-| **EP** (Equivalence Partitioning — Phân lớp tương đương) | REQ-01 → REQ-08 (tất cả) | 33 | Phân chia đầu vào thành các lớp tương đương: hợp lệ / không hợp lệ / rỗng. Ví dụ: email tồn tại / không tồn tại, tài khoản hoạt động / tạm ngưng / hết hạn |
-| **BVA** (Boundary Value Analysis — Phân tích giá trị biên) | REQ-01, REQ-04, REQ-05, REQ-06 | 8 | Kiểm tra các giá trị biên: ô nhập rỗng (TC-04), số sách mượn tại đúng giới hạn 3 cuốn (TC-14, TC-18), ngày hết hạn đúng ngày hôm nay / vượt ngày (TC-21, TC-22) |
-| **IDM** (Input Domain Modeling — Mô hình hóa miền đầu vào) | REQ-01 → REQ-08 (tất cả) | 33 | Phân tích đặc tính (Characteristic), phân vùng (Block), và giá trị đại diện (Value) trước khi thiết kế TC. Áp dụng cho tất cả 8 chức năng |
-
----
-
-## 4. Phân tích chất lượng phần mềm
-
-### 4.1. Điểm mạnh
-
-- **Đăng nhập (REQ-01)**: Xác thực email/mật khẩu hoạt động chính xác. Các thông báo lỗi rõ ràng, thân thiện với người dùng. Kiểm tra ô trống hoạt động đúng.
-- **Hiển thị danh sách sách (REQ-02)**: Toàn bộ thông tin sách (tên, tác giả, năm xuất bản, trạng thái) được hiển thị đầy đủ và chính xác.
-- **Tìm kiếm theo tên/tác giả (REQ-03)**: Tìm kiếm theo tên sách và tác giả không phân biệt hoa/thường — hoạt động tốt.
-- **Kiểm soát mượn sách cơ bản (REQ-04, 05)**: Chặn mượn khi sách đang được mượn, tài khoản tạm ngưng, tài khoản hết hạn — tất cả hoạt động đúng.
-- **Xử lý sách quá hạn (REQ-06)**: Phân quyền giữa thủ thư và thành viên rõ ràng. Hệ thống đánh dấu quá hạn đúng ngày. Thành viên chỉ thấy phiếu của mình.
-- **Tra cứu phiếu mượn cơ bản (REQ-08)**: Thủ thư xem được tất cả phiếu. Thành viên chỉ thấy phiếu của mình khi truy cập bình thường.
-
-### 4.2. Điểm yếu
-
-- **Quản lý thành viên (REQ-07) — Nghiêm trọng nhất**: Chức năng thêm thành viên có 3 lỗi cùng lúc:
-  - Không thể thêm thành viên với email hợp lệ (BUG-04) → chức năng cốt lõi bị gãy hoàn toàn.
-  - Chấp nhận email sai định dạng (thiếu dấu `.`) (BUG-05) → dữ liệu bẩn vào hệ thống.
-  - Thông báo lỗi sai khi email trùng (BUG-06) → gây nhầm lẫn cho người dùng.
-- **Giới hạn mượn sách (REQ-04, 05) — Nghiêm trọng**: Hệ thống cho phép mượn cuốn sách thứ 4 trong khi giới hạn là 3 (BUG-03). Vi phạm trực tiếp quy tắc nghiệp vụ.
-- **Tìm kiếm theo thể loại (REQ-03)**: Bộ lọc thể loại phân biệt hoa/thường (BUG-01, BUG-02). Người dùng nhập `kinh tế` hoặc `KINH TẾ` đều không ra kết quả — trải nghiệm rất tệ.
-- **Bảo mật dữ liệu (REQ-08) — Nghiêm trọng**: Thành viên có thể xem phiếu mượn của thành viên khác bằng cách nhập mã thành viên vào ô tìm kiếm (BUG-07) → vi phạm quyền riêng tư.
+| Technique | REQ covered | Application |
+|----------|--------------------|------------------------|
+| **EP** (Equivalence Partitioning) | REQ-01 → REQ-08 | Divided inputs into equivalence classes: valid / invalid / empty. For example: existing / non-existing email, active / suspended / expired account. |
+| **BVA** (Boundary Value Analysis) | REQ-01, REQ-04, REQ-05, REQ-06 | Tested boundary values: empty input fields, number of borrowed books exactly at the 3-book limit, expiration date exactly today / overdue. |
+| **Negative Testing** | REQ-01, REQ-03, REQ-07 | Deliberately entered invalid data and violated business constraints to verify the system handles errors correct. Such as empty field, wrong password, invalid email, invalid user name and non existence data |
+| **Decision Table** | REQ-04, REQ-05 | Mapped out complex, multi-conditional business logic combining distinct rules. Used to verify combinations like: Account Status (Active/Suspended/Expired) + Book Status (Available/Borrowed/Lost) + Book Borrowed (<3 / =3)  to determine whether the final action (Allow/Reject Borrowing) was executed correctly. |
 
 ---
 
-## 5. Đề xuất ưu tiên sửa lỗi
+## 4. Software Quality Analysis
 
-> 💡 Tiêu chí ưu tiên: **Severity** (mức độ nghiêm trọng kỹ thuật) kết hợp **Priority** (tác động nghiệp vụ). Ưu tiên cao = ảnh hưởng đến tính toàn vẹn dữ liệu, quyền truy cập, hoặc chức năng cốt lõi bị gãy hoàn toàn.
+### 4.1. Strengths
 
-| Thứ tự | Bug | Mức độ | Lý do ưu tiên |
+- **Login** (REQ-01): Email/password authentication functions accurately. Error messages are clear and user-friendly. Empty field validation works properly.
+- **View book list (REQ-02)**: All book information (title, author, publication year, status) is fully and accurately displayed.
+- **Borrow/Return function (REQ-04)**: Blocks borrowing when a book is already borrowed, the account is suspended, or the account is expired — all work correctly..
+- **Overdue Handling (REQ-06)**: Role separation between librarian and member is distinct. The system correctly marks overdue records based on the exact date.
+- **Record Lookup (REQ-08)**: Librarians can view all records.
+
+### 4.2. Weakness
+
+- **Member management(REQ-07) — MOST CRITICAL**: The add member function has 3 simultaneous defects:
+  - Unable to add a member with a valid email → core functionality is completely broken.
+  - Accepts malformed emails (missing a .) → allows bad data into the system.
+  - Displays an incorrect error message when an email is duplicated → causes confusion for users.
+- **Book borrowing limit (REQ-04) — Critical**: The system allows borrowing a 4th book despite a maximum limit of 3. This is a direct violation of the business rule
+- **Searching by category (REQ-03)**: The category filter is case-sensitive. Users entering kinh tế or KINH TẾ get no results — leading to a very poor user experience.
+- **Data Security (REQ-08) — Critical**: Members can view other members' loan records simply by entering another member's ID into the search box → violates data privacy.
+
+---
+
+## 5. Fix suggestions
+
+
+| Order | Bug | Severity | Reason for priority |
 |--------|-----|--------|---------------|
-| 🔴 1 | **BUG-04** — Không thêm được thành viên dù nhập đúng | High | Chức năng thêm thành viên **hoàn toàn không hoạt động** — thủ thư không thể quản lý hệ thống |
-| 🔴 2 | **BUG-07** — Thành viên xem được phiếu mượn của người khác | High | **Vi phạm bảo mật và quyền riêng tư** — dữ liệu cá nhân bị lộ |
-| 🔴 3 | **BUG-03** — Cho mượn sách thứ 4 (vượt giới hạn 3) | High | **Vi phạm quy tắc nghiệp vụ** — ảnh hưởng đến tính toàn vẹn dữ liệu mượn trả |
-| 🟠 4 | **BUG-05** — Thêm thành viên thành công dù email sai định dạng | High | Dữ liệu bẩn (email không hợp lệ) vào database, gây hậu quả lâu dài |
-| 🟠 5 | **BUG-01** — Tìm thể loại không ra kết quả khi nhập chữ thường | High | Ảnh hưởng trực tiếp đến trải nghiệm người dùng khi tìm sách |
-| 🟠 6 | **BUG-02** — Tìm thể loại không ra kết quả khi nhập chữ HOA | High | Cùng gốc với BUG-01, sửa một lần giải quyết cả hai |
-| 🟡 7 | **BUG-06** — Thông báo lỗi sai khi email trùng | Low | Gây nhầm lẫn cho thủ thư nhưng không ảnh hưởng đến dữ liệu |
+| 🔴 1 | **BUG-06** — Cannot add member despite correct input | High | The add member function **does not work at all** — librarians cannot manage the system. |
+| 🔴 2 | **BUG-09** — Members can view others' borrowing records | High | **Violates privacy and security** — data leak |
+| 🔴 3 | **BUG-04** — Allows borrowing a 4th book (exceeding limit of 3) | High | **Violates business rule** - compromises the integrity of borrow data. |
+| 🟠 4 | **BUG-07** — System added member successfully with incorect email syntax | High | Bad data (invalid emails) enters the database, causing long-term consequences. |
+| 🟠 5 | **BUG-03** — Incorrect error message when trying to borrow a book as a suspended member | High | **Violate business requirement** Incorrect error message that will lead to bad user experience. |
+| 🟠 6 | **BUG-01** — Category search yields no results for lowercase input | High | Directly impacts user experience when searching for books. |
+| 🟠 7 | **BUG-02** — Category search yields no results for UPPERCASE input| High | Directly impacts user experience when searching for books. |
+| 🟠 8 | **BUG-05** — Overdue message does not pop up correctly| Medium | **Violate business requirement** May lead to bad user experience |
+| 🟡 9 | **BUG-06** — Incorrect error message on duplicate email | Low | Confuses the librarian but does not affect data integrity. |
 
 ---
 
-## 6. Kết luận
+## 6. Conclusion
 
-**Hệ thống chưa sẵn sàng phát hành (Not Ready for Release).**
+**The system is not ready for release.**
 
-Sau khi kiểm thử toàn bộ 34 test case trên 8 chức năng chính, nhóm ghi nhận tỷ lệ pass đạt **79.4%** với **7 lỗi** được phát hiện, trong đó **6 lỗi mức High**. Cụ thể:
+After executing all 34 test cases across 8 major functions, the team recorded a pass rate of **73.6%** with **9 bugs** detected, **7 of which are High severity**. Specifically:
 
-- Chức năng **Quản lý thành viên (REQ-07)** gần như **không hoạt động được** — thủ thư không thể thêm thành viên hợp lệ vào hệ thống trong khi hệ thống lại chấp nhận email sai định dạng.
-- Chức năng **Mượn sách (REQ-04, 05)** vi phạm giới hạn 3 sách — dữ liệu mượn trả mất tính toàn vẹn.
-- Chức năng **Tra cứu phiếu mượn (REQ-08)** có lỗ hổng quyền truy cập nghiêm trọng — vi phạm quyền riêng tư của thành viên.
+- The **Member management (REQ-07)** function is practically **non-functional** — librarians cannot add valid members to the system, yet the system incorrectly accepts invalid email formats.
+- The **Borrow book (REQ-04)** functions violate the 3-book limit — compromising the integrity of transaction data.
+- The **Record lookup (REQ-08)** function contains a critical access control vulnerability — violating member privacy.
 
-Các chức năng hoạt động tốt gồm: Đăng nhập, Hiển thị danh sách sách, Xử lý sách quá hạn, và tìm kiếm theo tên/tác giả.
+Functions operating well include: Login, View book list, Overdue handling, and search by title/author.
 
-**Khuyến nghị**: Ưu tiên sửa ngay BUG-04, BUG-07, BUG-03 trước khi triển khai. Cần kiểm thử lại (regression testing) toàn bộ REQ-07 và REQ-08 sau khi sửa.
-
----
-
-## 7. Bài học rút ra
-
-- **Thiết kế test case trước khi chạy** giúp phủ đều các luồng (happy path, negative, boundary) và tránh bỏ sót chức năng quan trọng.
-- **BVA cực kỳ hiệu quả** cho các giới hạn số (giới hạn 3 sách mượn) — nếu không áp dụng BVA, có thể bỏ qua BUG-03.
-- **Phân quyền (authorization)** là một trong những điểm dễ bị bỏ qua nhưng có tác động bảo mật cao. Cần test phân quyền cho từng vai trò ở từng tính năng.
-- **Thông báo lỗi cần được kiểm thử riêng** — lỗi không chỉ là "chức năng bị gãy" mà còn là "thông báo sai" (như BUG-06) gây nhầm lẫn cho người dùng.
-- Sử dụng **IDM (Input Domain Modeling)** trước khi viết test case giúp nhóm hệ thống hóa các trường hợp kiểm thử và không bỏ sót phân vùng quan trọng.
+**Recommendation**: Prioritize immediate fixes for BUG-06, BUG-09, and BUG-04 before deployment. Full regression testing for REQ-07 and REQ-08 is mandatory post-fix.
 
 ---
 
-## 8. Khai báo sử dụng AI
+## 7. Lesson learned
 
-> Nếu nhóm có sử dụng công cụ AI (ChatGPT, Copilot, Gemini...), hãy ghi rõ bên dưới. Khai báo trung thực **không ảnh hưởng điểm** — đây là kỹ năng minh bạch trong nghề.
+- **Designing test cases before execution** ensures even coverage across all paths (happy path, negative, boundary) and prevents overlooking crucial features.
+- **BVA is highly effective** for numeric boundaries (the 3-book limit) — without BVA, BUG-04 could easily have been missed.
+- **Authorization (permission control)** is easily neglected but has a massive security impact. It is vital to test permissions for every role across each feature.
+- **Error messages require dedicated testing** — defects are not just "broken features" but also "misleading notifications" (like BUG-08) that confuse users.
+- Utilizing **IDM (Input Domain Modeling)** prior to writing test cases helps the team systematically organize test scenarios and guarantees no major partitions are missed.
 
-| Công cụ AI | Dùng cho phần nào | Bạn đã kiểm tra/chỉnh sửa thế nào |
+---
+
+## 8. AI usage
+
+| AI Tool | Used for | How you verified/edited |
 |------------|-------------------|-----------------------------------|
-| Gemini | Hỗ trợ tổng hợp báo cáo summary dựa trên dữ liệu thực tế đã có | Toàn bộ số liệu (TC, Pass/Fail, Bug) lấy từ kết quả thực thi thực tế của nhóm. Hỗ trợ kiểm tra lại từng mục trước khi nộp |
+| Gemini | Assisted in compiling the summary report based on actual existing data | All statistics (TCs, Pass/Fail, Bugs) were drawn directly from the team's actual execution results. Double-checked each item before submission. |
