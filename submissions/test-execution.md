@@ -73,7 +73,7 @@
 | TC-31 | Member Management | Display invalid email format warning | Display invalid email format warning | Pass | | |
 | TC-32 | Member Management | Display invalid email format warning | Member account successfully created | Fail | | BUG-07 |
 | TC-33 | Member Management | Display error: email already exists in the system | Display invalid email format warning | Fail | | BUG-08 |
-| TC-34 | Ticket Lookup | Display invalid phone number error | Display invalid email format warning (Blocked by BUG-05) | Failed | | |
+| TC-34 | Ticket Lookup | Display invalid phone number error | Display invalid email format warning (Blocked by BUG-05) | Fail | | |
 
 ### REQ-08 Ticket Lookup
 | TC-ID | Functional Group | Expected result | Actual result | Verdict | Proof | Bug |
@@ -107,6 +107,5 @@
 | Book Borrow| 5 | 3 | 2 | 60% | 
 | Book Return| 2 | 1 | 1 | 50% |
 | Overdue Handling | 5 | 5 | 0 | 100%
-| Member Management | 7 | 3 | 3| 42%
+| Member Management | 7 | 3 | 4 | 42%
 | Ticket Lookup | 4 | 3 | 1 | 75%
-
