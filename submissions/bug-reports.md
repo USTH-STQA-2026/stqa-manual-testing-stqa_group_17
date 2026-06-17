@@ -276,7 +276,7 @@
 
 ---
 
-## BUG-07 - The system displays incorrect message regarding email that has already existed in the database
+## BUG-08 - The system displays incorrect message regarding email that has already existed in the database
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
