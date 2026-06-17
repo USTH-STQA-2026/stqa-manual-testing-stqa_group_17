@@ -102,8 +102,8 @@
 | Group | Total Test Case | Pass | Fail | Pass rate |
 |------|---------|------|------|------------|
 | Login | 6 | 6 | 0 | 100% |
-| Search Function | 7 | 5 | 2 | 71%
 | Book List | 2 | 2 | 0 | 100% |
+| Search Function | 7 | 5 | 2 | 71%
 | Book Borrow| 5 | 3 | 2 | 60% | 
 | Book Return| 2 | 1 | 1 | 50% |
 | Overdue Handling | 5 | 5 | 0 | 100%
