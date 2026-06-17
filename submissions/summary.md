@@ -11,7 +11,7 @@
 | **Class** | `STQA2A` |
 | **Report date** | `02/06/2026` |
 | **Tested system** | https://stqa.rbc.vn — v1.0 |
-| **REPO** | https://github.com/USTH-STQA-2026/stqa-automation-testing-stqa_group_17 |
+| **REPO** | https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17 |
 
 ---
 
