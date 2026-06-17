@@ -1,96 +1,354 @@
-# Bug Reports — Báo cáo lỗi
+# Bug Reports 
 
-> **Hướng dẫn**: Tạo 1 mục bug cho mỗi TC có kết quả **Fail**.
-> Xem [examples/sample-bug-report.md](../examples/sample-bug-report.md) để hiểu cách viết bug report tốt.
-> Mỗi bug cần: tiêu đề mô tả hành vi lỗi, bước tái hiện, expected vs actual, severity + giải thích.
 
-| Thông tin | |
+
+| Information | |
 |---|---|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Ngày báo cáo** | `<!-- DD/MM/YYYY -->` |
+| **Group** | `Group 17` |
+| **Report Date** | `16/05/2026` |
+
+**Environment:**
+- Browser: Firefox `139`
+- Operating System: `Windows 11`
+- Interface Language: English
 
 ---
 
-## BUG-01
+## BUG-01 - The category feature is case sensitive and does not return results when lower-case texts are entered
+
+| Attributes | Details |
+|-----------|---------|
+| **Bug-ID** | BUG-01 |
+| **Related TC** | `TC-13` |
+| **Related REQ** | `REQ-03` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+
+**Prerequisites:**
+`Logged into the system as "MEM002", in the "Books" page`
+
+**Steps:**
+1. Click on the search bar: Filter by category(e.g. Technology, Economics...)
+2. Enter all lower-case string `kinh tế` 
+3. Press `Enter`
+
+
+**Expected results:**
+`Display books in the category "Kinh tế" (lower-case should not matter)`
+
+**Actual results:**
+`Empty book list, only accept when the user uses the exact form of "Kinh tế"`
+
+**Impact:**
+`Affects user experience. Users who type in lower-case may not be able to find books and lead to thinking that the system does not have the book or the filter system is broken even though the book exists in the system`
+
+**Proof:**
+![TC-13](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-13.png?raw=true)
+
+**Fix suggestions:**
+`Developer can normalize the user input in to the same format` 
+
+---
+
+## BUG-02 - The category feature is case sensitive and does not return results when upper-case texts are entered
+
+| Attribute | Details |
+|-----------|---------|
+| **Bug-ID** | BUG-02 |
+| **Related TC** | `TC-14` |
+| **Related REQ** | `REQ-03` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+
+**Prerequisites:**
+`Logged into the system as "MEM002", in the "Books" page`
+
+**Steps:**
+1. Click on the search bar: Filter by category(e.g. Technology, Economics...)
+2. Enter all lower-case string `KINH TẾ` 
+3. Press `Enter`
+
+
+**Expected results:**
+`Display books in the category "Kinh tế" (upper-case should not matter)`
+
+**Actual results:**
+`Empty book list, only accept when the user uses the exact form of "Kinh tế"`
+
+**Impact:**
+`Affects user experience. Users who type in lower-case may not be able to find books and lead to thinking that the system does not have the book or the filter system is broken even though the book exists in the system`
+
+**Proof:**
+![TC-14](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-14.png?raw=true)
+
+**Fix suggestions:**
+`Developer can normalize the user input in to the same format` 
+
+--- 
+
+## BUG-03 - System display incorrect warning message regarding user status
+
+| Attribute | Details |
+|-----------|---------|
+| **Bug-ID** | BUG-03 |
+| **Related TC** | `TC-18` |
+| **Related REQ** | `REQ-04` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+ 
+**Prerequisites:**
+`Logged in as suspended member "MEM004"`
+
+**Steps:**
+1. Log in the system with as `MEM004`
+2. Borrow books with status `Available`
+3. Check the system response
+
+**Expected results:**
+`Upon clicking borrow the system should display a warning message that the user is suspended`
+
+**Actual results:**
+`The system display a warning message that the user is expired`
+
+**Impacts:**
+`Violates the business rule`
+
+**Proof:**
+![TC-18](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-18-bug03.png?raw=true)
+
+**Fix suggestions**
+`Correct the error message to "member has been suspended"`
+
+---
+
+## BUG-04 - Allow the user to borrow the 4th book
+
+| Attribute | Details |
+|-----------|---------|
+| **Bug-ID** | BUG-04 |
+| **Related TC** | `TC-20` |
+| **Related REQ** | `REQ-04` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+ 
+**Prerequisites:**
+`Logged in the system as "MEM002", having already borrowed 3 books, books have "Available" status`
+
+**Steps:**
+1. Log in the system with as `MEM002`
+2. Borrow 4 books with the status `Available`
+3. Check the system response
+
+**Expected results:**
+`Upon reaching the 4th book, the system must display a warning that there is a 3 books limit and reject additional borrowing`
+
+**Actual results:**
+`The system allow the user to borrow the 4th book and only show error when the user attempts to borrow the 5th book`
+
+**Impacts:**
+`Violates the business requirements`
+
+**Proof:**
+![TC-20](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-20.png?raw=true)
+
+**Fix suggestions**
+`Adjust the borrow count logic`
+
+---
+
+## BUG-05 - System does not display overdue warning when returning an overdue book
+
+| Attribute | Detail |
+|-----------|---------|
+| **Bug-ID** | BUG-05 |
+| **Related TC** | `TC-22` |
+| **Related REQ** | `REQ-05` |
+| **Severity** | `Medium` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `16/06/2026` |
+| **Status** | `Open` |
+ 
+**Prerequisites:**
+`Logged in the system as "MEM002", having an overdue book that is not yet returned`
+
+**Steps:**
+1. Log in the system with as `MEM002`
+2. Access the borrow/return tab
+3. Click `Return book` on ticket `BR001`
+4. Observe the pop up message
+
+**Expected results:**
+`Upon clicking the "Return book" button there should be 2 messages popping up. 1 for returning the book successfully and 1 for having returning the book later than the due date`
+
+**Actual results:**
+`Only 1 message regarding returning the book successfully, missing the 2nd pop up message`
+
+**Impacts:**
+`Violates the business requirements`
+
+**Proof:**
+![TC-22](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-22.png?raw=true)
+
+**Fix suggestions:**
+`Implement a check on whether the return date is later than the due date and have the warning accordingly`
+
+---
+
+## BUG-06 - System failed to add member with valid information
+
+| Attribute | Detail |
+|-----------|---------|
+| **Bug-ID** | BUG-06 |
+| **Related TC** | `TC-29` |
+| **Related REQ** | `REQ-07` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+
+**Prerequisites:**
+`Logged in as the Librarian, member information are valid`
+
+**Steps:**
+1. Log in the system with the librarian account
+2. Click on the `Add member` at the top right corner
+3. Fill the boxes with valid information
+
+**Expected results:**
+`The system adds the member sucessfully`
+
+**Actual results:**
+`The system displays an error regarding incorrect email syntax`
+
+**Impacts:**
+`The add member button functionality is no longer met`
+
+**Proof:**
+![TC-29](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-29.png?raw=true)
+
+**Fix suggestions**
+`Adjust the correct syntax for email`
+
+---
+
+## BUG-07 - System added member successfully with incorect email syntax
+
+| Attribute | Details |
+|-----------|---------|
+| **Bug-ID** | BUG-07 |
+| **Related TC** | `TC-32` |
+| **Related REQ** | `REQ-07` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+
+**Prerequisites:**
+`Logged in as the Librarian, member's email address is invalid, name and phone number is valid`
+
+**Steps:**
+1. Log in the system with the librarian account
+2. Click on the `Add member` at the top right corner
+3. Fill the boxes with `tester@emailcom` as email information and valid name and phone number
+
+**Expected results:**
+`The system reject the request and display an error regarding incorrect email syntax`
+
+**Actual results:**
+`The system added the member successfully`
+
+**Impacts:**
+`The add member button functionality is no longer met`
+
+**Proof:**
+![TC-32](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-32.png?raw=true)
+
+**Fix suggestions**
+`Adjust the correct syntax for email`
+
+---
+
+## BUG-08 - The system displays incorrect message regarding email that has already existed in the database
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug-ID** | BUG-08 |
+| **Related TC** | `TC-33` |
+| **Related REQ** | `REQ-08` |
+| **Severity** | `Low` |
+| **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
+| **Ngày phát hiện** | `30/05/2026` |
+| **Trạng thái** | `Open` |
 
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
+**Prerequisites:**
+`Logged in as the Librarian, member's email address match with one that exists in side the database, name and phone number is valid`
 
-**Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
-- Ngôn ngữ giao diện: Tiếng Việt
+**Steps:**
+1. Log in the system with the librarian account
+2. Click on the `Add member` at the top right corner
+3. Fill the boxes with `ba.nguyen@email.com` as email and valid name and phone numbe
 
-**Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
+**Expected results:**
+`The system reject the request and display "Email already exists" error`
 
-**Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
+**Actual results:**
+`The system reject the request and display "Email invalid" error`
 
-**Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
+**Impacts:**
+`May cause the librarian to mistakenly think that the email is invalid instead of thinking it is already in the system database`
 
-**Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
+**Proof:**
+![TC-33](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-33.png?raw=true)
 
-**Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
-
-**Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`
-
-**Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
+**Fix suggestions**
+`Give repeated email its own error`
 
 ---
 
-## BUG-02
+## BUG-09 - Member can lookup other member's borrowing records
 
-| Thuộc tính | Chi tiết |
+| Attribute | Details|
 |-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| **Bug-ID** | BUG-09 |
+| **Related TC** | `TC-37` |
+| **Related REQ** | `REQ-08` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
 
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
+**Prerequisites:**
+`Logged in as an "MEM002"`
 
-**Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
+**Steps:**
+1. Log in the system as `MEM002`
+2. Enter the `Borrow/Return` page
+3. Click `Search borrow records` on top-right corner
+4. Enter another member's ID in to the search bar
+5. Click `Enter`
 
-**Kết quả mong đợi:**
-`<!-- -->`
 
-**Kết quả thực tế:**
-`<!-- -->`
+**Expected results:**
+`The system denies the user's request to lookup other member's record or returns a blank borrowing records with an error message`
 
-**Tác động:**
-`<!-- -->`
+**Actual results:**
+`The system allows the user to look up other member's borrowing records`
 
-**Minh chứng:**
-`<!-- -->`
+**Impacts:**
+`Privacy and access control violation`
 
-**Đề xuất xử lý:**
-`<!-- -->`
+**Proof:**
+![TC-37](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-37.png?raw=true)
+
+**Fix suggestions**
+`Adjust member permission or make sure that the member's ID matches the searched member's ID`
 
 ---
-
-<!-- Copy template BUG trên để thêm BUG-03, BUG-04, ... cho mỗi TC Fail -->
