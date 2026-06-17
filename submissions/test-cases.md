@@ -1,18 +1,18 @@
-# Test Cases — Bảng trường hợp kiểm thử
+# Test Cases 
 
 
-| Thông tin | |
+| Attributes | Values |
 |---|---|
-| **Nhóm** | `Nhóm 17` |
-| **Ngày tạo** | `17/05/2026` |
-| **Hệ thống** | https://stqa.rbc.vn |
-| **Tham chiếu** | SRS v1.0 |
+| **Group** | `Nhóm 17` |
+| **Creation Date** | `17/05/2026` |
+| **System** | https://stqa.rbc.vn |
+| **Reference** | SRS v1.0 |
 
 ---
 
 ## 1. Input Domain Modeling (IDM)
 
-### IDM — Đăng nhập (REQ-01)
+### IDM — Login (REQ-01)
 
 | Characteristic | Block | Value | Expected Results |
 |---|---|---|---|
@@ -27,7 +27,7 @@
 | | Empty password only | Email: `librarian@library.com` <br /> Password: ""| Display error message: Please enter password
 
 
-### IDM — Xem danh sách sách (REQ-02)
+### IDM — View book list (REQ-02)
 
 | Characteristic | Block | Value | Expected Results |
 |---|---|---|---|
@@ -39,7 +39,8 @@
 | Book Information Display | Complete book information | `BOOK001` | System displays title, author, genre, published year of `BOOK001`
 | Real-time update | After borrowing a book  | `BOOK001` | Status changes to "Borrowed" instantly
 | | After returning a book | `BOOK003` | Status changes to "Available" instantly  
-### IDM — Tìm kiếm sách (REQ-03)
+
+### IDM — Search Function (REQ-03)
 
 | Characteristic | Block | Value | Expected Results |
 |---|---|---|---|
@@ -131,96 +132,96 @@
 ## 3. Test Cases
 
 
-
 ---
 
-### Bảng Test Cases — REQ-01: Đăng nhập
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases Table — REQ-01: Login
+| TC-ID | Test Objective | Preconditions | Test steps | Input values | Exptected Results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-01 | Kiểm tra thành viên có thể đăng nhập với email và mật khẩu hợp lệ | Thành viên đã có tài khoản trong hệ thống và đang ở trang đăng nhập | 1.Điền email hợp lệ vào ô `Email`. 2.Sử dụng mật khẩu đúng vào ô `Mật khẩu`. 3.Ấn Đăng nhập  | Email: `librarian@library.com` , Pass: `admin123` | Đăng nhập thành công, hiển thị trang  | REQ-01  | EP, BVA |
-| TC-02 | Kiểm tra thành viên đăng nhập thất bại do sai mật khẩu | Hệ thống ở trang đăng nhập | 1.Điền email hợp lệ vào ô `Email`. 2.Nhập sai mật khẩu vào ô `Mật khẩu`. 3.Nhấn Đăng nhập | Email: `librarian@library.com` , Pass: `wrongpass` | Thông báo lỗi sai thông tin đăng nhập. | REQ-01 | EP |
-| TC-03 | Kiểm tra thành viên đăng nhập thất bại do email không tồn tại | Hệ thống ở trang đăng nhập | 1.Điền email không có trong database. 2. Nhập đúng mật khẩu vào ô `Mật khẩu`. 3. Nhấn Đăng nhập | Email: `noone@email.com` , Pass: `admin123` | Thông báo lỗi không tìm thấy tài khoản. | REQ-01 | EP |
-| TC-04 | Kiểm tra thành viên đăng nhập thất bại khi để trống Email | Hệ thống ở trang đăng nhập | 1.Bỏ trống ô email. 2.Nhập mật khẩu vào ô `Mật khẩu`. 3.Nhấn Đăng nhập | Email: `""` , Pass: `admin123` | Hiển thị cảnh báo "Vui lòng nhập email". | REQ-01 | EP, BVA |
-| TC-05 | Kiểm tra thành viên đăng nhập thất bại khi để trống mật khẩu | Hệ thống ở trang đăng nhập | 1.Nhập email hợp lệ. 2.Bỏ trống ô mật khẩu. 3.Nhấn Đăng nhập | Email: `librarian@library.com` <br />Password:`" "`  | Hiển thị cảnh báo "Vui lòng nhập mật khẩu" | REQ-01 | EP,BVA
-| TC-06 | Kiểm tra thành viên đăng nhập thất bại khi để trống cả ô email và mật khẩu | Hệ thống ở trang đăng nhập | 1.Bỏ trống email. 2.Bỏ trống ô mật khẩu. 3.Nhấn Đăng nhập  | Email: `" "` <br />Password: `" "` | Hiện cảnh báo "Vui lòng nhập email" và "Vui lòng nhập mật khẩu" |REQ-01 | EP,BVA 
+| TC-01 | Verify successful login with valid account | User have a valid account in the system | 1. Enter `Email`. 2.Enter `Mật khẩu`. 3.Click `Login`  | Email: `librarian@library.com` , Pass: `admin123` | Login successfully | REQ-01  | EP, BVA |
+| TC-02 | Verify login with incorrect password | User on the login page | 1.Enter valid email. 2.Enter incorrect password. 3.Click Login | Email: `librarian@library.com` , Pass: `wrongpass` | Display error message: `Incorrect password` | REQ-01 | EP, Negative Testing |
+| TC-03 | Verify login with non-existing email | User on the login page | 1.Enter non-existing email 2. Enter password. 3. Click login | Email: `noone@email.com` , Pass: `admin123` | Display error message: "Member not found". | REQ-01 | EP, Negative Testing |
+| TC-04 | Verify login with empty email field | User on the login page | 1.Leave email field empty. 2.Enter password. 3.Click Login | Email: `""` , Pass: `admin123` | Display error message:"Please enter email". | REQ-01 | EP, BVA, Negative Testing |
+| TC-05 | Verify login with empty password | User on the login page | 1.Enter valid email. 2.Leave password field empty. 3.Click login | Email: `librarian@library.com` <br />Password:`" "`  | Display message: "Please enter passwordd" | REQ-01 | EP,BVA, Negative Testing
+| TC-06 | Verify login failure when leaving both fields empty | User is on the login page | 1. Leave both email and password fields empty. 2. Click Login. | Email: `" "` <br />Password: `" "` | Display warning messages: "Please enter email" and "Please enter password". |REQ-01 | EP,BVA, Negative Testing 
 ---
 
-### Bảng Test Cases — REQ-02: Xem danh sách sách 
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-02: View book list 
+| TC-ID | Test Objective | Preconditions | Test steps | Input data | Expected Results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-07 | Kiểm tra danh sách sách hiển thị đầy đủ thông tin cho thành viên và thủ thư | Người dùng có tài khoản hợp lệ | 1. Đăng nhập vào hệ thống 2.Vào phần "Sách" 3.Nhìn vào danh sách sách | Tài khoản bất kỳ hợp lệ | Danh sách hiển thị tên sách, tên tác giả, năm xuất bản và trạng thái | REQ-02 | EP
-| TC-08 | Kiểm tra sách cập nhật trạng thái đúng trong real-time | Người dùng có tài khoản hợp lệ | 1. Đăng nhập vào hệ thống bằng tài khoản người dùng 2.Vào phần "Sách" 3. Nhấn nút `Mượn sách này` trên sách có trạng thái `Có sẵn` 4. Nhấn "Mượn" để xác nhận mượn sách 5. Quan sát trạng thái sách thay đổi| Tài khoản người dùng hợp lệ | Trạng thái sách thay đổi từ "Có sẵn" sang "Đang mượn" ngay lập tức | REQ-02 | EP 
+| TC-07 | Verify book list displays complete information for both members and librarians | User has a valid account | 1. Log in to the system. 2. Navigate to the "Books" section. 3. View the book list. | Any valid account | The list correctly displays book title, author, publication year, and status. | REQ-02 | EP
+| TC-08 | Verify book status updates correctly in real-time | User has a valid account | 1. Log in to the system. 2. Navigate to the "Books" section. 3. View the book list. 4. Click "Confirm". 5. Observe the status.| User has a valid account | The book status updates from "Available" to "Borrowed" instantly. | REQ-02 | EP 
 ---
 
-### Bảng Test Cases — REQ-03: Tìm kiếm sách
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-03: Search Function
+| TC-ID | Test objective | Preconditions | Test steps | Input value | Expected results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-09 | Tìm sách thành công bằng một phần tên sách | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa tên sách. 3.Nhấn Tìm kiếm | Từ khóa: `"Flutter"` | Hiển thị danh sách các cuốn sách có chứa từ "Flutter". | REQ-03 | EP |
-| TC-10 | Tìm sách thành công bằng tên tác giả | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập tên tác giả. 3.Nhấn Tìm kiếm | Từ khóa: `"Nguyễn"` | Hiển thị danh sách sách của tác giả có tên "Nguyễn". | REQ-03 | EP |
-| TC-11 | Tìm sách không tồn tại | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập chuỗi ngẫu nhiên. 3.Nhấn Tìm kiếm | Từ khóa: `"XYZ123"` | Hiển thị danh sách rỗng. | REQ-03 | EP |
-| TC-12 | Tìm tên sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"FLUTTER"` | Kết quả hiển thị giống như khi tìm `"Flutter"`. | REQ-03 | EP |
-| TC-13 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"Kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
-| TC-14 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"kinh tế"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
-| TC-15 | Tìm thể loại sách không phân biệt chữ hoa hay thường | Đã đăng nhập hệ thống | 1.Vào ô tìm kiếm thể loại. 2.Nhập từ khóa chữ hoa toàn bộ. 3.Nhấn Tìm kiếm | Từ khóa: `"KINH TẾ"` | Hiển thị các sách thuộc thể loại kinh tế | REQ-03 | EP
+| TC-09 | Find book successfully using a partial book title | Logged into the system | 1. Go to the search bar. 2. Enter the partial title keyword. 3. Click Search. | Keyword:`"Flutter"` | Displays a list of books containing the word "Flutter". | REQ-03 | EP |
+| TC-10 | Find book successfully using the author's name | Logged into the system | 1. Go to the search bar. 2. Enter the author's name. 3. Click Search. | Keyword: `"Nguyễn"` | Displays a list of books written by authors named "Nguyễn". | REQ-03 | EP |
+| TC-11 | Handle searching for a non-existing book | Logged into the system | 1. Go to the search bar. 2. Enter a random string. 3. Click Search. | Keyword: `"XYZ123"` | Displays an empty list | REQ-03 | EP, Negative Testing |
+| TC-12 | Verify search is case-insensitive for book titles | Logged into the system | 1. Go to the search bar. 2. Enter an all-uppercase title. 3. Click Search. | Keyword: `"FLUTTER"` | The displayed result is identical to searching for `"Flutter"`. | REQ-03 | EP |
+| TC-13 | Verify search is case-sensitive for genre | Logged into the system | 1. Go to the genre search filter. 2.Enter the genre with mixed lowercase and uppercase. 3.Click search| Keyword: `"Kinh tế"` | Displays all books belonging to the `"Kinh tế"` category. | REQ-03 | EP
+| TC-14 | Verify search is case-sensitive for genre | Logged into the system | 1. Go to the genre search filter. 2.Enter the genre with all lowercase. 3.Click search | Keyword: `"kinh tế"` | Displayed search result is identical to searching for `"Kinh tế"` | REQ-03 | EP
+| TC-15 | Verify search is case-sensitive for genre | Logged into the system | 1. Go to the genre search filter. 2.Enter the genre with all uppercase 3.Click search | Keyword: `"KINH TẾ"` | Displayed search result is identical to searching for `"Kinh tế"` | REQ-03 | EP
 ---
 
-### Bảng Test Cases — REQ-04 - Borrow
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-04 - Borrow
+| TC-ID | Test objectives | Preconditions | Test steps | Input value | Expected results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-16 | Mượn sách thành công (Điều kiện lý tưởng) | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Chọn sách có trạng thái "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 0 | Hệ thống cho phép mượn, tạo phiếu mượn thành công. | REQ-04, 05 | EP, BVA, Decision Table |  
-| TC-17 | Chặn mượn sách đang được người khác mượn | Đăng nhập tài khoản Thành viên Hoạt động | 1.Tìm sách đang có trạng thái "Đang mượn". 2.Nhấn Mượn sách | Sách: `BOOK003` | Nút mượn bị mờ hoặc hệ thống báo lỗi không cho phép. | REQ-04, 05 | EP, Decision Table |
-| TC-18 | Chặn mượn sách khi tài khoản bị Tạm ngưng | Đăng nhập tài khoản Tạm ngưng (`cu.le@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Tạm ngưng | Từ chối mượn, thông báo lỗi tài khoản đang bị tạm ngưng. | REQ-04, 05 | EP, Decision Table |
-| TC-19 | Chặn mượn sách khi tài khoản đã Hết hạn | Đăng nhập tài khoản Hết hạn (`binh.pham@email.com`) | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Tài khoản: Hết hạn | Từ chối mượn, thông báo lỗi tài khoản đã hết hạn. | REQ-04, 05 | EP, Decision Table |
-| TC-20 | Chặn mượn sách khi đã đạt giới hạn tối đa (3 cuốn) | Đăng nhập tài khoản đã mượn đủ 3 cuốn | 1.Chọn sách "Có sẵn". 2.Nhấn Mượn sách | Sách: `BOOK001` Sách đang mượn: 3 | Từ chối, thông báo số lượng sách mượn vượt quá giới hạn. | REQ-04, 05 | EP,Decision Table |
+| TC-16 | Successfully borrow a book under ideal conditions | Logged in with an Active Member account (`MEM002`) | 1. Select a book with "Available" status. 2. Click Borrow Book. | Book: `BOOK001` Currently borrowed: 0 | The system allows borrowing and successfully creates a borrow record. | REQ-04, 05 | EP, BVA, Decision Table |  
+| TC-17 | Block borrowing a book that is already borrowed by someone else | Logged in with an Active Member account(`MEM002`) | 1. Find a book with "Borrowed" status. 2. Attempt to click Borrow Book. | Book: `BOOK003` | The borrow button is disabled or the system throws an unavailable error. | REQ-04, 05 | EP, Decision Table |
+| TC-18 | Block borrowing when the account status is Suspended | Logged in with a Suspended account (`cu.le@email.com`) | 1. Select an "Available" book. 2. Click Borrow Book. | Book: `BOOK001` Account: Suspended | Borrowing is rejected; system displays a message that the account is suspended. | REQ-04, 05 | EP, Decision Table |
+| TC-19 | Block borrowing when the account status is Expired | Logged in with an Expired account (`binh.pham@email.com`) | 1. Select an "Available" book. 2. Click Borrow Book. | Book: `BOOK001` Account: Expired| Borrowing is rejected; system displays a message that the account has expired. | REQ-04, 05 | EP, Decision Table |
+| TC-20 | Block borrowing when the member reaches the maximum limit (3 books) | Logged in with a member account that already has 3 books  | 1. Select an "Available" book. 2. Click Borrow Book. | Book: `BOOK001` Sách đang mượn: 3 | Borrowing is rejected; system displays a "borrow limit exceeded" error.| REQ-04, 05 | EP,BVA,Decision Table |
 
 ---
-### Bảng Test Cases — REQ-05: Return
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-05: Return
+| TC-ID | Test objectives | Preconditions | Test steps | Input value | Expected results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-21 | Trả sách đúng hạn | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Access borrow/return tab. 2.Select an active record that is not overdue. 3.Click return book.  | - | -Book is returned successfully<br />-No overdue warning displayed | REQ-04,05 | EP,BVA,Decision Table
-| TC-22 | Return overdue books | Đăng nhập với tài khoản Thành viên Hoạt động (`MEM002`) | 1.Access borrow/return tab. 2.Select an active record that is overdue. 3.Click return book. | - | -Book is returned successfully<br />-Overdue warning displayed | REQ-04,05 | EP,BVA,Decision Table 
+| TC-21 | Return a book successfully before the due date | Logged in with an Active Member account (`MEM002`) | 1.Access borrow/return tab. 2.Select an active record that is not overdue. 3.Click return book.  | - | -Book is returned successfully<br />-No overdue warning displayed | REQ-04,05 | EP,BVA,Decision Table
+| TC-22 | Return overdue books | 1. Access the borrow/return tab. (`MEM002`) | 1.Access borrow/return tab. 2.Select an active record that is overdue. 3.Click return book. | - | -Book is returned successfully<br />-Overdue warning displayed | REQ-04,05 | EP,BVA,Decision Table 
 ---
 
-### Bảng Test Cases — REQ-06: Xử lý sách quá hạn
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-06: Overdue Handling
+| TC-ID | Test objective | Preconditions | Test Steps | Input value | Expected results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-23 | Phân quyền hiển thị nút Xử lý quá hạn (Thủ thư) | Đăng nhập tài khoản Thủ thư (`librarian@library.com`) | 1.Truy cập trang Quản lý mượn trả | - | Nhìn thấy nút "Kiểm tra sách quá hạn". | REQ-06 | EP |
-| TC-24 | Phân quyền hiển thị nút Xử lý quá hạn (Thành viên) | Đăng nhập tài khoản Thành viên (`ba.nguyen@email.com`) | 1.Truy cập trang Quản lý mượn trả / Phiếu mượn | - | Không nhìn thấy nút "Kiểm tra sách quá hạn". | REQ-06 | EP |
-| TC-25 | Đánh dấu phiếu mượn quá hạn | Thủ thư nhấn nút Kiểm tra sách quá hạn | 1.Hệ thống quét các phiếu mượn đang có | Phiếu: `BR001` Hạn trả: 15/09/2024 (<= Hôm nay) | Phiếu BR001 được cập nhật trạng thái thành "Quá hạn". | REQ-06 | EP, BVA |
-| TC-26 | Không thay đổi trạng thái phiếu chưa đến hạn | Thủ thư nhấn nút Kiểm tra sách quá hạn | 1.Hệ thống quét các phiếu mượn đang có | Phiếu: Mới tạo hôm nay (Hạn trả > Hôm nay) | Phiếu giữ nguyên trạng thái "Đang mượn". | REQ-06 | EP, BVA |
-| TC-27 | Hiển thị phiếu quá hạn cho chính thành viên đó | Đăng nhập Thành viên `MEM002` (có phiếu quá hạn) | 1.Truy cập danh sách phiếu mượn của tôi | - | Nhìn thấy phiếu mượn của mình bị đánh dấu đỏ hay quá hạn. | REQ-06 | EP |
+| TC-23 | Verify authorization for "Check Overdue" button visibility (Librarian) | Logged in with a Librarian account (`librarian@library.com`) | 1. Access the Borrow/Return Management page. | N/A | The "Check Overdue Books" button is visible. | REQ-06 | EP |
+| TC-24 | Verify authorization for "Check Overdue" button visibility (Member) | Logged in with a Member account (`ba.nguyen@email.com`) | 1. Access the Borrow/Return/My Tickets page. | N/A | The "Check Overdue Books" button is hidden. | REQ-06 | EP |
+| TC-25 | Automatically mark a borrow record as Overdue | Librarian clicks the "Check Overdue" button | 1. System scans all active borrow records. | Record: `BR001` Due Date: 15/09/2024 (<= Today) | The status of record `BR001` is updated to "Overdue". | REQ-06 | EP, BVA |
+| TC-26 | Ensure active valid records remain unaffected by overdue check | Librarian clicks the "Check Overdue" button | 1. System scans all active borrow records. | Record: Created today <br />(Due Date > Current Date) | The record status remains safely as "Borrowing". | REQ-06 | EP, BVA |
+| TC-27 | Display overdue status clearly to the respective member | Logged in as Member `MEM002` (who has an overdue book) | 1. Navigate to "My Borrow Records". | Overdue record in database | The user sees their specific record flagged in red or marked as "Overdue". | REQ-06 | EP |
 ---
 
-### Bảng Test Cases — REQ-07: Quản lý thành viên
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-07: Member Management
+| TC-ID | Test objective | Preconditions | Test Steps | Input value | Expected results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-28 | Phân quyền hiển thị nút Thêm thành viên | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang chủ| Email: `librarian@library.com` <br />Password: admin123 | Nhìn thấy nút/chức năng "Thêm thành viên". | REQ-07 | EP |
-| TC-29 | Thêm thành viên | Đăng nhập tài khoản thủ thư | 1. Truy cập trang chủ 2. Nhấn nút thêm thành viên 3.Điền thông tin thành viên hợp lệ 4.Nhấn nút thêm thành viên | Họ tên: `Tester` Email:`Tester@email.com` SĐT: `0123456789` | Thêm thành viên thành công | REQ-07 | EP 
-| TC-30 | Thêm thành viên thất bại do bỏ trống Họ tên | Thủ thư ở trang Thêm TV | 1.Bỏ trống Họ tên. 2.Nhập Email hợp lệ. 3.Nhập số điện thoại hợp lệ 4.Nhấn Lưu | Họ tên: `""` Email: `test@email.com` SĐT: `"0123456789"` | Báo lỗi "Họ tên không được để trống". | REQ-07 | EP, BVA |
-| TC-31 | Thêm thành viên thất bại do sai định dạng Email (thiếu @) | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email thiếu "@". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtestemail.com` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ. | REQ-07 | EP |
-| TC-32 | Thêm thành viên thất bại do sai định dạng Email (thiếu ".")  | Thủ thư ở trang thêm thành viên | 1.Nhập Họ tên. 2.Nhập Email thiếu ".". 3.Nhập số điện thoại hợp lệ. 4.Nhấn Lưu | Họ tên:`Tester` Email: `Emailtest@emailcom` SĐT: `"0123456789"` | Báo lỗi định dạng email không hợp lệ | REQ-07 | EP |
-| TC-33 | Thêm thành viên thất bại do trùng Email đã có | Thủ thư ở trang Thêm TV | 1.Nhập Họ tên. 2.Nhập Email của TV đang có. 3.Lưu | Họ tên: `Tester` Email: `ba.nguyen@email.com` SĐT:0123456789 | Báo lỗi email đã tồn tại trong hệ thống. | REQ-07 | EP |
-| TC-34 | Thêm thành viên thất bại do nhập số điện thoại không hợp lệ | Thủ thư ở trang thêm TV | 1.Nhập họ tên. 2.Nhập email hợp lệ. 3. Nhập số điện thoại không có 10 số 4.Nhấn lưu.| Họ tên: `Tester` Email" `Tester@email.com` SĐT:012345678 | Báo lỗi số điện thoại không hợp lệ | REQ-07 | EP  
+| TC-28 | Verify authorization for "Add Member" button visibility | Logged in with a Librarian account | 1. Access the system homepage/dashboard.| Email: `librarian@library.com` <br />Password: `admin123` | The "Add Member" button/feature is fully visible. | REQ-07 | EP |
+| TC-29 | Add a member successfully with valid details | Logged in with a Librarian account | 1. Go to Dashboard. 2. Click "Add Member". 3. Fill in all valid fields. 4.Click "add member" | Full name: `Tester` Email:`Tester@email.com` Phone: `0123456789` | Member account is successfully created. | REQ-07 | EP 
+| TC-30 | Prevent member creation due to an empty Name field | Librarian is on the Add Member page | 1. Leave the Full Name field blank. 2. Fill in valid Email and Phone. 3. Click "Save". | Full Name: `""` Email: `test@email.com` Phone: `0123456789` | Registration fails; displays error: "Full name cannot be empty". | REQ-07 | EP, BVA, Negative Testing |
+| TC-31 | Prevent member creation due to missing "@" in email | Librarian is on the Add Member page | 11. Enter full name. 2. Enter email missing "@". 3. Fill in valid phone number. 4.Click save | Full Name:`Tester` Email: `Emailtestemail.com` Phone: `0123456789` | Registration fails; displays an invalid email format warning. | REQ-07 | EP, Negative Testing |
+| TC-32 | Prevent member creation due to missing "." in email domain  |Librarian is on the Add Member page | 1. Enter full name. 2. Enter email missing ".". 3. Fill in valid phone number. 3.click "Save".| Full Name:`Tester` Email: `Emailtest@emailcom` Phone: `0123456789` | Registration fails; displays an invalid email format warning. | REQ-07 | EP, Negative Testing |
+| TC-33 | Prevent member creation due to email duplicate conflict | Librarian is on the Add Member page | 1. Enter a name. 2. Enter an email already registered. 3. Click "Save". | Full Name: `Tester` Email: `ba.nguyen@email.com` Phone:`0123456789` | Registration fails; displays error: "User already exists". | REQ-07 | EP, Negative Testing |
+| TC-34 | Prevent member creation due to an invalid phone number length | Librarian is on the Add Member page | 1.Enter full name. 2.Enter valid Email. 3. Enter a phone number with fewer than 10 digits. 4.Click save.| Họ tên: `Tester` Email" `Tester@email.com` Phone:`012345678` | Registration fails; displays error message: "Please enter valid phone number". | REQ-07 | EP, Negative Testing  
 ---
 
-### Bảng Test Cases — REQ-08: Tra cứu phiếu mượn
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
+### Test Cases — REQ-08: Record Lookup
+| TC-ID | Test objective | Preconditions | Test Steps | Input value | Expected results | REQ | Techniques |
 |-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| TC-35 | Tra cứu toàn bộ phiếu mượn (Dành cho Thủ thư) | Đăng nhập tài khoản Thủ thư | 1.Truy cập trang Tra cứu phiếu mượn | - | Xem được danh sách phiếu mượn của tất cả các thành viên. | REQ-08 | EP |
-| TC-36 | Thành viên chỉ tra cứu được phiếu của mình | Đăng nhập tài khoản Thành viên `MEM002` | 1.Truy cập trang Tra cứu phiếu mượn | - | Chỉ hiển thị các phiếu mượn thuộc về `MEM002`. | REQ-08 | EP |
-| TC-37 | Thành viên cố tình xem phiếu của người khác qua URL/Tìm kiếm | Đăng nhập Thành viên `MEM002` | 1.Cố gắng nhập mã phiếu/mã TV của `MEM003` để tìm kiếm | Mã cần tìm: Phiếu của `MEM003` | Hệ thống báo không tìm thấy hoặc chặn hiển thị dữ liệu. | REQ-08 | EP |
-| TC-38 | Kiểm tra hiển thị đầy đủ chi tiết thông tin của phiếu mượn | Đã đăng nhập hệ thống và ở trang Tra cứu phiếu mượn | 1.Nhập mã thành viên hợp lệ vào ô tìm kiếm. 2.Nhấn Tìm kiếm | Mã thành viên : `MEM002` | Hệ thống hiển thị chính xác và đầy đủ các thông tin: mã phiếu, sách mượn, ngày mượn, ngày hết hạn, và trạng thái phiếu. | REQ-08 | EP |
+| TC-35 | Allow full system search access for Librarians | Logged in with a Librarian account | 1. Navigate to the Record Lookup feature | N/A | The librarian can view and lookup borrow records across all members. | REQ-08 | EP |
+| TC-36 | Restrict Members to only search their personal records |Logged in with Member account `MEM002` | 1. Navigate to the Record Lookup feature. | N/A | The interface isolates data and only exposes records owned by `MEM002`. | REQ-08 | EP |
+| TC-37 | Restrict a Member trying to lookup another member's record explicitly | Logged in with Member account `MEM002` | 1. Force search parameter or ID input field with MEM003. | Target search ID: `MEM003` | HThe system blocks cross-account access and displays "Not Found" or "Unauthorized". | REQ-08 | EP |
+| TC-38 | Verify lookup details are exhaustive and correctly rendered | User has performed a successful search entry | 1. Enter a valid member code. 2. Press Search. | Search entry : `MEM002` | The display accurately reveals ticket ID, book name, borrow date, due date, and current status. | REQ-08 | EP |
 ---
 
 ## 4. Summary
 
-| Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
+| Functional Group | Total TC | REQ Covered | Applied IDM Techniques |
 |----------------|-------|---------|----------------------|
-| Đăng nhập| 6 | REQ-01 | EP, BVA |
-| Xem danh sách sách| 2 | REQ-02 | EP
-| Tìm kiếm | 7 | REQ-03 | EP
-| Mượn sách | 7 | REQ-04, 05 | EP, BVA, Decision Table
-| Xử lý sách quá hạn| 5 | REQ-06 | EP, BVA 
-| Quản lý thành viên | 7 | REQ-07 | EP, BVA
-| Tra cứu phiếu mượn| 4 | REQ-08 | EP
-| Tổng | 38 | 8 | EP, BVA, Decision Table |
+| Login| 6 | REQ-01 | EP, BVA, Negative Testing |
+| View book list| 2 | REQ-02 | EP
+| Search Function| 7 | REQ-03 | EP, Negative Testing
+| Book Borrow| 5 | REQ-04 | EP, BVA, Decision Table
+| Book Return| 2 | REQ-05 | EP, BVA, Decision Table
+| Overdue handling| 5 | REQ-06 | EP, BVA 
+| Member management | 7 | REQ-07 | EP, BVA, Negative Testing
+| Record lookup| 4 | REQ-08 | EP
+| Total | 38 | 8 | EP, BVA, Decision Table, Negative Testing |
