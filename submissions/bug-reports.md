@@ -88,13 +88,50 @@
 **Fix suggestions:**
 `Developer can normalize the user input in to the same format` 
 
----
+--- 
 
-## BUG-03 - Allow the user to borrow the 4th book
+## BUG-03 - System display incorrect warning message regarding user status
 
 | Attribute | Details |
 |-----------|---------|
 | **Bug-ID** | BUG-03 |
+| **Related TC** | `TC-18` |
+| **Related REQ** | `REQ-04` |
+| **Severity** | `High` |
+| **Bug reporter** | `Nguyễn Ngọc Minh Hiếu` |
+| **Date reported** | `30/05/2026` |
+| **Status** | `Open` |
+ 
+**Prerequisites:**
+`Logged in as suspended member "MEM004"`
+
+**Steps:**
+1. Log in the system with as `MEM004`
+2. Borrow books with status `Available`
+3. Check the system response
+
+**Expected results:**
+`Upon clicking borrow the system should display a warning message that the user is suspended`
+
+**Actual results:**
+`The system display a warning message that the user is expired`
+
+**Impacts:**
+`Violates the business rule`
+
+**Proof:**
+![TC-18](https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_17/blob/main/Screenshots/TC-18.png?raw=true)
+
+**Fix suggestions**
+`Correct the error message to "member has been suspended"`
+
+---
+
+## BUG-04 - Allow the user to borrow the 4th book
+
+| Attribute | Details |
+|-----------|---------|
+| **Bug-ID** | BUG-04 |
 | **Related TC** | `TC-20` |
 | **Related REQ** | `REQ-04` |
 | **Severity** | `High` |
@@ -127,11 +164,11 @@
 
 ---
 
-## BUG-04 - System does not display overdue warning when returning an overdue book
+## BUG-05 - System does not display overdue warning when returning an overdue book
 
 | Attribute | Detail |
 |-----------|---------|
-| **Bug-ID** | BUG-04 |
+| **Bug-ID** | BUG-05 |
 | **Related TC** | `TC-22` |
 | **Related REQ** | `REQ-05` |
 | **Severity** | `Medium` |
@@ -165,11 +202,11 @@
 
 ---
 
-## BUG-05 - System failed to add member with valid information
+## BUG-06 - System failed to add member with valid information
 
 | Attribute | Detail |
 |-----------|---------|
-| **Bug-ID** | BUG-05 |
+| **Bug-ID** | BUG-06 |
 | **Related TC** | `TC-29` |
 | **Related REQ** | `REQ-07` |
 | **Severity** | `High` |
@@ -202,11 +239,11 @@
 
 ---
 
-## BUG-06 - System added member successfully with incorect email syntax
+## BUG-07 - System added member successfully with incorect email syntax
 
 | Attribute | Details |
 |-----------|---------|
-| **Bug-ID** | BUG-06 |
+| **Bug-ID** | BUG-07 |
 | **Related TC** | `TC-32` |
 | **Related REQ** | `REQ-07` |
 | **Severity** | `High` |
@@ -243,9 +280,9 @@
 
 | Thuộc tính | Chi tiết |
 |-----------|---------|
-| **Bug-ID** | BUG-07 |
+| **Bug-ID** | BUG-08 |
 | **Related TC** | `TC-33` |
-| **Related REQ** | `REQ-07` |
+| **Related REQ** | `REQ-08` |
 | **Severity** | `Low` |
 | **Người phát hiện** | `Nguyễn Ngọc Minh Hiếu` |
 | **Ngày phát hiện** | `30/05/2026` |
@@ -276,11 +313,11 @@
 
 ---
 
-## BUG-08 - Member can lookup other member's borrowing records
+## BUG-09 - Member can lookup other member's borrowing records
 
 | Attribute | Details|
 |-----------|---------|
-| **Bug-ID** | BUG-08 |
+| **Bug-ID** | BUG-09 |
 | **Related TC** | `TC-37` |
 | **Related REQ** | `REQ-08` |
 | **Severity** | `High` |
